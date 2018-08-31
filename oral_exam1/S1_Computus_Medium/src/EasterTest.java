@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+//To do
+// 1.Test if input is  a number
+// 2.JUnit Test
+
 public class EasterTest {
 
     public static void main(String[] args) {
@@ -10,19 +14,20 @@ public class EasterTest {
         // prompt for and read year
         System.out.println("Enter Year:");
 
-        String theYear = input.nextLine(); // read a line of text
+        int theYear = input.nextInt(); // read a line of text
+        System.out.println("x");
 
-        EasterTest cycle = new EasterTest();
-        cycle.easterCycle(theYear);
+
+        EasterTest.easterCycle(theYear);
 
     }
 
-    private void easterCycle(String theYear){
+    private static void easterCycle(int theYear){
         int [] marchOccurrences = new int[31];
         int [] aprilOccurrences = new int[30];
 
         //Loops exactly from the input year to 5700000 years in the future
-        for(int i = Integer.parseInt(theYear); i< 5700000 + Integer.parseInt(theYear); i++) {
+        for(int i = theYear; i< 5700000 + theYear; i++) {
             Easter e = new Easter(i);
             if (e.getMonth() == 3) {
                 marchOccurrences[e.getDay() - 1] += 1;
@@ -39,7 +44,6 @@ public class EasterTest {
 
         for(int i=0;i<aprilOccurrences.length;i++){
             if(aprilOccurrences[i]!=0){
-
                 System.out.println("April " + (i+1) + " - "+ aprilOccurrences[i]);
             }
         }

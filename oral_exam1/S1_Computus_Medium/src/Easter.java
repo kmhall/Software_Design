@@ -41,9 +41,5 @@ public class Easter {
         this.easterString = "Easter: " + listMonths[month] + " " + day + ", " + year;
     }
 
-    public void printEasterString(){
-        System.out.println(easterString);
-    }
-
 
 }
