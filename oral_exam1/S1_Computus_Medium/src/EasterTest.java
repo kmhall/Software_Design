@@ -15,8 +15,6 @@ public class EasterTest {
         System.out.println("Enter Year:");
 
         int theYear = input.nextInt(); // read a line of text
-        System.out.println("x");
-
 
         EasterTest.easterCycle(theYear);
 
