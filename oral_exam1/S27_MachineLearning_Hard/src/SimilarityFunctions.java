@@ -13,7 +13,8 @@ public class SimilarityFunctions {
         SimilarityFunctions s = new SimilarityFunctions();
         File dataset = new File("./oral_exam1/S27_MachineLearning_Hard/src/S27-MLMedium.csv");
         double[] newDataPoint = new double[]{1.5, 3.5, 2, 2, 8};
-        String output = s.knearest(dataset, newDataPoint,5);
+
+        s.knearest(dataset, newDataPoint,5);
     }
 
     public double cosineSimilarity(double[] vector1, double[] vector2) {
@@ -69,20 +70,19 @@ public class SimilarityFunctions {
     }
 
 
-    public String knearest(File dataset, double[] newDataPoint,int k){
+    public void knearest(File dataset, double[] newDataPoint,int k){
 
+        //dataArray is a list of lists containing the dataset in the form [data point 1, ... ,data point 5, class]
         List<List<String>> dataArrayList = csvToArrayList(dataset);
 
+        //dataArray is a 2D array of arrays in the form [euclideanDistance between the newDataPoint and the dataset points, dataset class]
         String[][] dataArray = arraylistToArray(dataArrayList, newDataPoint);
-        for(int i=0;i<dataArray.length;i++){
-                System.out.println("Entry: "+ i + " Value: " +dataArray[i][0]+ " Class: " + dataArray[i][1]);
-            }
 
+        orderArray(dataArray);
 
-        String output = "";
-        return output;
+        calcClosest(dataArray,k);
+
     }
-
 
     private List<List<String>> csvToArrayList(File dataset){
         //Documentation
@@ -132,5 +132,54 @@ public class SimilarityFunctions {
 
         return dataArray;
     }
+
+    private void orderArray( String[][] dataArray){
+
+        double key;
+        String keyClass;
+
+        //Insertion sort
+        for (int i = 1; i < dataArray.length; i++)
+        {
+            key = Double.parseDouble(dataArray[i][0]);
+            keyClass = dataArray[i][1];
+            int j = i-1;
+
+            while (j >= 0 && Double.parseDouble(dataArray[j][0]) > key)
+            {
+                dataArray[j+1][0] = dataArray[j][0];
+                dataArray[j+1][1] = dataArray[j][1];
+                j = j-1;
+            }
+            dataArray[j+1][0] = Double.toString(key);
+            dataArray[j+1][1] = keyClass;
+
+        }
+
+    }
+
+    private void calcClosest(String[][] dataArray,int k){
+        int numClass1=0;
+        int numClass2=0;
+
+        for(int i =0;i<k;i++){
+            if(dataArray[k][1] == "\"class1\""){
+                numClass1++;
+            }
+            else {
+                numClass2++;
+            }
+        }
+        if(numClass1>numClass2){
+            System.out.println("New data point belongs to class1");
+        }
+        else if(numClass2>numClass1){
+            System.out.println("New data point belongs to class2");
+        }
+        else{
+            System.out.println("New data point belongs is evenly split");
+        }
+    }
+
 }
 
