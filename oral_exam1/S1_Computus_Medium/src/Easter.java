@@ -1,24 +1,28 @@
 public class Easter {
 
-    public Easter(int year){
-        this.year = year;
-        calculateEaster();
-    }
-
-    private String [] listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
-
+    private final String [] listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
     private int month;
     private int day;
     private int year;
 
-    private String easterString;
-
     public int getMonth(){
         return month;
     }
-
     public int getDay(){
         return day;
+    }
+
+    public Easter(int year){
+        validateInput(year);
+        this.year = year;
+        calculateEaster(); // I want to give initial values at initiation
+
+    }
+
+    private static void validateInput(int year){
+        if(year<0){
+            throw new IllegalArgumentException("Input date is invalid");
+        }
     }
 
     private void calculateEaster(){
@@ -38,8 +42,10 @@ public class Easter {
 
         this.month = (h+l-7*m+114)/31;
         this.day = ((h+l-7*m+114)%31)+1;
-        this.easterString = "Easter: " + listMonths[month] + " " + day + ", " + year;
     }
 
+    public String toString(){
+        return "Easter: " + listMonths[month-1] + " " + day + ", " + year;
+    }
 
 }

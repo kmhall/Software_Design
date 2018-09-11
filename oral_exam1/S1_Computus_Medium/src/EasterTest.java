@@ -2,22 +2,19 @@ import java.util.Scanner;
 
 //To do
 // 1.Test if input is  a number
-// 2.JUnit Test
 
 public class EasterTest {
 
     public static void main(String[] args) {
 
-        // create a Scanner object to obtain input from the command window
-        Scanner input = new Scanner(System.in);
-
-        // prompt for and read year
-        System.out.println("Enter Year:");
-
+        Scanner input = new Scanner(System.in); // create a Scanner object to obtain input from the command window
+        System.out.println("Enter Year:"); // prompt for and read year
         int theYear = input.nextInt(); // read a line of text
 
-        EasterTest.easterCycle(theYear);
 
+        Easter e = new Easter(theYear); //Created to test failing case
+
+        EasterTest.easterCycle(theYear);
     }
 
     private static void easterCycle(int theYear){
@@ -47,7 +44,4 @@ public class EasterTest {
         }
 
     }
-
-
-
 }
