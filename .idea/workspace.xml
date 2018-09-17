@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afe8c167-415f-4ec2-a281-392f25806ebd" name="Default Changelist" comment="Refactored Folder names,">
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/S1_Computus_Medium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/S1_Computus_Medium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +55,7 @@
     <session id="-1252785768">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="3" />
@@ -73,7 +69,7 @@
           <entry key="csv" value="2" />
           <entry key="groovy" value="2" />
           <entry key="iml" value="3" />
-          <entry key="java" value="40" />
+          <entry key="java" value="42" />
           <entry key="md" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -84,7 +80,7 @@
           <entry key="CSV" value="1" />
           <entry key="Groovy" value="2" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="42" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="2" />
         </counts>
@@ -93,14 +89,14 @@
         <counts>
           <entry key="dummy" value="20" />
           <entry key="groovy" value="8" />
-          <entry key="java" value="10931" />
+          <entry key="java" value="10933" />
           <entry key="txt" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="8" />
-          <entry key="JAVA" value="10931" />
+          <entry key="JAVA" value="10933" />
           <entry key="PLAIN_TEXT" value="101" />
         </counts>
       </usages-collector>
@@ -108,11 +104,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="44">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="879">
+              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -120,11 +125,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
+            <state>
               <caret column="2" selection-start-column="2" selection-end-column="2" />
               <folding>
                 <element signature="e#1117#1118#0" expanded="true" />
                 <element signature="e#1196#1197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,7 +197,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
@@ -208,20 +225,6 @@
               <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
               <item name="S1_Computus_Medium" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
-              <item name="S1_Computus_Medium" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
-              <item name="S1_Computus_Medium" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -248,7 +251,7 @@
     <property name="SearchEverywhereHistoryKey" value="b&#9;FILE&#9;file:///Users/Kyle_hall/IdeaProjects/khall5_swd/textbook_examples/ch24/books_examples/books_examples.iml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536628295165" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536843789762" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -398,9 +401,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimilarityFunctionsTest - 2018.09.04 at 17h 07m 10s.xml">
-      <configuration name="SimilarityFunctionsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArithmeticJUnitTest - 2018.09.07 at 09h 01m 12s.xml">
       <configuration name="ArithmeticJUnitTest" configurationId="JUnit" />
     </history-entry>
@@ -428,15 +428,17 @@
     <history-entry file="EasterJUnitTest - 2018.09.10 at 19h 28m 17s.xml">
       <configuration name="EasterJUnitTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EasterJUnitTest - 2018.09.11 at 13h 59m 36s.xml">
+      <configuration name="EasterJUnitTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2354000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24232633" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24232633" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -588,13 +590,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/formatCSV.java" />
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/textbook_examples/ch08/fig08_03/src/Time1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -710,8 +705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="60">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -720,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
+        <state>
           <caret column="2" selection-start-column="2" selection-end-column="2" />
           <folding>
             <element signature="e#1117#1118#0" expanded="true" />
@@ -731,8 +726,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="44">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="879">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,7 @@
 public class Easter {
 
+    //Call static methods in constructor
+
     private final String [] listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
     private int month;
     private int day;

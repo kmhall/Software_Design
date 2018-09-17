@@ -9,12 +9,11 @@ public class EasterTest {
 
         Scanner input = new Scanner(System.in); // create a Scanner object to obtain input from the command window
         System.out.println("Enter Year:"); // prompt for and read year
-        int theYear = input.nextInt(); // read a line of text
+        EasterTest.easterCycle(input.nextInt());
 
 
-        Easter e = new Easter(theYear); //Created to test failing case
+//        Easter e = new Easter(theYear); //Created to test failing case
 
-        EasterTest.easterCycle(theYear);
     }
 
     private static void easterCycle(int theYear){
