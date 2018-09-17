@@ -69,7 +69,6 @@ public class SimilarityFunctions {
         return similarity;
     }
 
-
     public void knearest(File dataset, double[] newDataPoint,int k){
 
         //dataArray is a list of lists containing the dataset in the form [data point 1, ... ,data point 5, class]

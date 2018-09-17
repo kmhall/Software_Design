@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afe8c167-415f-4ec2-a281-392f25806ebd" name="Default Changelist" comment="Refactored Folder names," />
+    <list default="true" id="afe8c167-415f-4ec2-a281-392f25806ebd" name="Default Changelist" comment="Refactored Folder names,">
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,7 @@
           <entry key="csv" value="2" />
           <entry key="groovy" value="2" />
           <entry key="iml" value="3" />
-          <entry key="java" value="45" />
+          <entry key="java" value="51" />
           <entry key="md" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -79,7 +82,7 @@
           <entry key="CSV" value="1" />
           <entry key="Groovy" value="2" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="45" />
+          <entry key="JAVA" value="51" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="2" />
         </counts>
@@ -88,14 +91,14 @@
         <counts>
           <entry key="dummy" value="20" />
           <entry key="groovy" value="8" />
-          <entry key="java" value="10999" />
+          <entry key="java" value="11296" />
           <entry key="txt" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="8" />
-          <entry key="JAVA" value="10999" />
+          <entry key="JAVA" value="11296" />
           <entry key="PLAIN_TEXT" value="101" />
         </counts>
       </usages-collector>
@@ -103,20 +106,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quizzes/Fig09_08/src/CommissionEmployee.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="378">
+              <caret line="100" column="36" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#cosineSimilarity#0;class#SimilarityFunctions#0" />
+                <element signature="method#magnitude#0;class#SimilarityFunctions#0" />
+                <element signature="method#hammingDistance#0;class#SimilarityFunctions#0" />
+                <element signature="method#euclideanDistance#0;class#SimilarityFunctions#0" />
+                <element signature="method#knearest#0;class#SimilarityFunctions#0" />
+                <element signature="method#arraylistToArray#0;class#SimilarityFunctions#0" />
+                <element signature="method#calcClosest#0;class#SimilarityFunctions#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/quizzes/Fig09_08/src/BasePlusCommissionEmployee.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            <state relative-caret-position="-397">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -155,14 +168,15 @@
         <option value="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java" />
         <option value="$PROJECT_DIR$/textbook_examples/ch08/fig08_03/src/MemberAccessTest.java" />
         <option value="$PROJECT_DIR$/quizzes/quiz09052018/src/MemberAccessTest.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" />
         <option value="$PROJECT_DIR$/quizzes/junit_quiz/src/Arithmetic.java" />
         <option value="$PROJECT_DIR$/quizzes/junit_quiz/src/ArithmeticJUnitTest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTestTest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" />
         <option value="$PROJECT_DIR$/quizzes/Fig09_08/src/BasePlusCommissionEmployee.java" />
+        <option value="$PROJECT_DIR$/quizzes/Fig09_08/src/CommissionEmployee.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" />
       </list>
     </option>
   </component>
@@ -211,36 +225,21 @@
               <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
               <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
               <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
-              <item name="S1_Computus_Medium" type="462c0819:PsiDirectoryNode" />
+              <item name="S27_MachineLearning_Hard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
               <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="quizzes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="quizzes" type="462c0819:PsiDirectoryNode" />
-              <item name="Fig09_08" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="quizzes" type="462c0819:PsiDirectoryNode" />
-              <item name="Fig09_08" type="462c0819:PsiDirectoryNode" />
+              <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
+              <item name="S27_MachineLearning_Hard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
               <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="textbook_examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="khall5_swd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="khall5_swd" type="462c0819:PsiDirectoryNode" />
-              <item name="textbook_examples" type="462c0819:PsiDirectoryNode" />
-              <item name="ch09" type="462c0819:PsiDirectoryNode" />
+              <item name="oral_exam1" type="462c0819:PsiDirectoryNode" />
+              <item name="S27_MachineLearning_Hard" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,7 +254,7 @@
     <property name="SearchEverywhereHistoryKey" value="b&#9;FILE&#9;file:///Users/Kyle_hall/IdeaProjects/khall5_swd/textbook_examples/ch24/books_examples/books_examples.iml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536843789762" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537213625332" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -305,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EasterTest">
+  <component name="RunManager" selected="Application.SimilarityFunctions">
     <configuration name="EasterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EasterTest" />
       <module name="S1_Computus_Medium" />
@@ -329,14 +328,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArithmeticJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="junit_quiz" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArithmeticJUnitTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EasterJUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S1_Computus_Medium" />
       <option name="PACKAGE_NAME" value="" />
@@ -355,21 +346,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SimilarityFunctionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S27_MachineLearning_Hard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SimilarityFunctionsTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Welcome1" />
       <item itemvalue="Application.SimilarityFunctions" />
-      <item itemvalue="JUnit.ArithmeticJUnitTest" />
       <item itemvalue="JUnit.EasterJUnitTest.easterDate" />
       <item itemvalue="JUnit.EasterJUnitTest" />
       <item itemvalue="Application.EasterTest" />
+      <item itemvalue="JUnit.SimilarityFunctionsTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SimilarityFunctions" />
+        <item itemvalue="JUnit.SimilarityFunctionsTest" />
         <item itemvalue="Application.EasterTest" />
         <item itemvalue="JUnit.EasterJUnitTest" />
         <item itemvalue="JUnit.EasterJUnitTest.easterDate" />
-        <item itemvalue="JUnit.ArithmeticJUnitTest" />
-        <item itemvalue="Application.SimilarityFunctions" />
       </list>
     </recent_temporary>
   </component>
@@ -406,12 +405,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArithmeticJUnitTest - 2018.09.07 at 09h 01m 12s.xml">
-      <configuration name="ArithmeticJUnitTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticJUnitTest - 2018.09.10 at 18h 25m 31s.xml">
-      <configuration name="ArithmeticJUnitTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EasterJUnitTest_easterDate - 2018.09.10 at 18h 25m 41s.xml">
       <configuration name="EasterJUnitTest.easterDate" configurationId="JUnit" />
     </history-entry>
@@ -436,12 +429,19 @@
     <history-entry file="EasterJUnitTest - 2018.09.11 at 13h 59m 36s.xml">
       <configuration name="EasterJUnitTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EasterJUnitTest - 2018.09.17 at 14h 40m 00s.xml">
+      <configuration name="EasterJUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimilarityFunctionsTest - 2018.09.17 at 14h 46m 21s.xml">
+      <configuration name="SimilarityFunctionsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2463651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,7 +459,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32846716" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3270073" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3270073" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3270073" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -654,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="185" selection-start-line="185" selection-end-line="185" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quizzes/junit_quiz/src/Arithmetic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -682,48 +675,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quizzes/Fig09_08/src/CommissionEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="98">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quizzes/Fig09_08/src/BasePlusCommissionEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        <state relative-caret-position="-14">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/test/EasterJUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/Easter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="100" column="36" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#cosineSimilarity#0;class#SimilarityFunctions#0" />
+            <element signature="method#magnitude#0;class#SimilarityFunctions#0" />
+            <element signature="method#hammingDistance#0;class#SimilarityFunctions#0" />
+            <element signature="method#euclideanDistance#0;class#SimilarityFunctions#0" />
+            <element signature="method#knearest#0;class#SimilarityFunctions#0" />
+            <element signature="method#arraylistToArray#0;class#SimilarityFunctions#0" />
+            <element signature="method#calcClosest#0;class#SimilarityFunctions#0" />
+          </folding>
         </state>
       </provider>
     </entry>
