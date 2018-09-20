@@ -9,13 +9,9 @@ import java.util.Arrays;
 
 public class SimilarityFunctions {
 
-    public static void main(String[] args){
-        SimilarityFunctions s = new SimilarityFunctions();
-        File dataset = new File("./oral_exam1/S27_MachineLearning_Hard/src/S27-MLMedium.csv");
-        double[] newDataPoint = new double[]{1.5, 3.5, 2, 2, 8};
-
-        s.knearest(dataset, newDataPoint,5);
-    }
+    /*
+    Implementation of all three of all three similarity functions.
+     */
 
     public double cosineSimilarity(double[] vector1, double[] vector2) {
 
@@ -44,7 +40,7 @@ public class SimilarityFunctions {
             sumOfSquares += (vector[i] * vector[i]);
         }
         return Math.sqrt(sumOfSquares);
-    }
+    } //Calculate magnitude for cosineSimilarity
 
     public int hammingDistance(String input1, String input2) {
 
@@ -69,13 +65,20 @@ public class SimilarityFunctions {
         return similarity;
     }
 
+    /*Supervised learning
+    Given a dataset, a new data point, and a parameter k, your solution will need to
+    find the k data points that are closest to the new data point as per your Euclidean
+    similarity function, and choose the most common class among them to classify the
+    new data point.
+     */
+
     public void knearest(File dataset, double[] newDataPoint,int k){
 
         //dataArray is a list of lists containing the dataset in the form [data point 1, ... ,data point 5, class]
-        List<List<String>> dataArrayList = csvToArrayList(dataset);
+        List<List<String>> dataList = csvToList(dataset);
 
         //dataArray is a 2D array of arrays in the form [euclideanDistance between the newDataPoint and the dataset points, dataset class]
-        String[][] dataArray = arraylistToArray(dataArrayList, newDataPoint);
+        String[][] dataArray = listToArray(dataList, newDataPoint);
 
         orderArray(dataArray);
 
@@ -83,16 +86,26 @@ public class SimilarityFunctions {
 
     }
 
-    private List<List<String>> csvToArrayList(File dataset){
+    //Converts
+    private List<List<String>> csvToList(File dataset){
         //Documentation
         //https://stackoverflow.com/questions/40074840/reading-a-csv-file-into-a-array
 
         //2D ArrayList (Used so that size of the .csv can be variable)
         List<List<String>> lines = new ArrayList<>();
         try{
+            System.out.println("***************************");
+            System.out.println("All lines of the ArrayList:");
+
+
             Scanner scanner = new Scanner(dataset);
             while(scanner.hasNext()){
                 String line = scanner.next();
+                /*
+                All lines of he ArrayList
+                 */
+                System.out.println(line);
+
                 String[] values = line.split(",");
                 lines.add(Arrays.asList(values));
             }
@@ -101,33 +114,54 @@ public class SimilarityFunctions {
         catch (FileNotFoundException e){
             e.printStackTrace();
         }
+        System.out.println("***************************");
 
         return lines;
 
     }
 
-    private String[][] arraylistToArray(List<List<String>> dataArrayList, double[] newDataPoint) {
+    private String[][] listToArray(List<List<String>> dataList, double[] newDataPoint) {
 
-        String [][] dataArray = new String[dataArrayList.size()][2];
-        int returnArrayIndex = 0;
+        //Declare a 2D array with the same length as the list
+        String [][] dataArray = new String[dataList.size()][2];
+        int dataArrayIndex = 0;
 
         double[] currentList = new double[5];
         int currentListIndex = 0;
 
-        for(List<String> line: dataArrayList) {
+        String test = "";
+
+        //For line in dataList. Used so that the length of the List doesn't need to be known.
+        for(List<String> line: dataList) {
+            //For value in line. This could be a normal loop because the length is known.
             for(String value: line) {
                 if(value.equals("\"class1\"") || value.equals("\"class2\"")){
-                    dataArray[returnArrayIndex][1] = value;
+                    dataArray[dataArrayIndex][1] = value;
                     currentListIndex = 0;
                 }else{
+                    //Current list is filled with all the data points that were in the list.
                     currentList[currentListIndex] = Double.parseDouble(value);
                     currentListIndex++;
                 }
+
+
+
             }
+            /*
+                Loop used to check if the list was converted properly to an array
+            */
+            for (int i =0;i<5;i++){
+                test += currentList[i] + ", ";
+            }
+            test += "\n";
+
+            //Calculate the euclideanDistance between the currentList and the newDataPoint.
             double e = euclideanDistance(newDataPoint,currentList);
-            dataArray[returnArrayIndex][0] = Double.toString(e);//Distance of currentList goes in here
-            returnArrayIndex++;
+            dataArray[dataArrayIndex][0] = Double.toString(e);//Distance of currentList goes in here
+            dataArrayIndex++;
         }
+        System.out.println(test);
+
 
         return dataArray;
     }
@@ -161,11 +195,14 @@ public class SimilarityFunctions {
         int numClass1=0;
         int numClass2=0;
 
-        for(int i =0;i<k;i++){
-            if(dataArray[k][1] == "\"class1\""){
+        for(int i = 0;i<k;i++){
+            if(dataArray[i][1].equals("\"class1\"")){
+
+                System.out.println(dataArray[i][1]);
                 numClass1++;
             }
             else {
+                System.out.println(dataArray[i][1]);
                 numClass2++;
             }
         }
@@ -180,5 +217,18 @@ public class SimilarityFunctions {
         }
     }
 
+    /*
+    Unsupervised Learning:  k-means clustering Given a dataset and a
+    number of clusters k, your code will converge on a clustering of
+    the data points. After clustering, your program should print how
+    many data points are in each cluster.
+     */
+
+    public void kmeans(File dataset,int k){
+
+    }
+
 }
+
+
 
