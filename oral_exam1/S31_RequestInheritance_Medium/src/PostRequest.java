@@ -1,8 +1,8 @@
 import java.util.UUID;
 
 public class PostRequest extends Request{
-    private static int count = 0;
 
+    private static int count;
     private String ip;
 
     public PostRequest(UUID id, String ip){
@@ -11,15 +11,13 @@ public class PostRequest extends Request{
         count++;
     }
 
-    public String getIp() {
+    private String getIp() {
         return ip;
     }
+    public static int count(){return count;}
 
     @Override
     public String toString() {
         return super.toString()+"\nPost request to server with IP address: "+getIp() ;
     }
-
-    public static int count(){return count;}
-
 }

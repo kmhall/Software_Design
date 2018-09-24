@@ -1,27 +1,26 @@
 import java.util.UUID;
 
 public class PostPaymentRequest extends PostRequest{
-    private static int count =0;
+
+    private static int count;
     private Payment payment;
 
-    PostPaymentRequest(UUID id, String ip,Payment payment){
+    public PostPaymentRequest(UUID id, String ip,Payment payment){
         super(id,ip);
         this.payment = payment;
         count++;
 
     }
 
-    public Payment getPayment() {
+    private Payment getPayment() {
         return payment;
+    }
+    public static int count() {
+        return count;
     }
 
     @Override
     public String toString() {
         return super.toString()+ "\n"+getPayment().toString();
     }
-
-    public static int count() {
-        return count;
-    }
-
 }

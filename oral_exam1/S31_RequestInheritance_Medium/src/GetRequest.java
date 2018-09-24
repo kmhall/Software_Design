@@ -2,8 +2,7 @@ import java.util.UUID;
 
 public class GetRequest extends Request {
 
-    private static int count = 0;
-
+    private static int count;
     private String url;
 
     //Base Constructor
@@ -20,8 +19,11 @@ public class GetRequest extends Request {
         count++;
     }
 
-    public String getUrl() {
+    private String getUrl() {
         return url;
+    }
+    public static int count() {
+        return count;
     }
 
     @Override
@@ -32,5 +34,4 @@ public class GetRequest extends Request {
         return super.toString()+"\nUniversal Resource Locator (URL): "+getUrl() ;
     }
 
-    public static int count(){return count;}
 }

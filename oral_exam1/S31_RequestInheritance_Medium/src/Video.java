@@ -5,29 +5,19 @@ public class Video {
     private String name;
 
     public Video(String url,String title,String name){
-        setUrl(url);
-        setTitle(title);
-        setName(name);
-    }
-
-    public String getUrl() {
-        return url;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+        this.url = url;
+        this.title = title;
         this.name = name;
     }
-    public void setTitle(String title) {
-        this.title = title;
+
+    private String getUrl() {
+        return url;
     }
-    public void setUrl(String url) {
-        this.url = url;
+    private String getTitle() {
+        return title;
+    }
+    private String getName() {
+        return name;
     }
 
     @Override

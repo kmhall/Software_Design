@@ -1,33 +1,26 @@
 public class File {
 
-    private String url;
     private String filePath;
     private String fileType;
+    private String url;
+
 
     public File(String filePath, String fileType){
-        setFilePath(filePath);
-        setFileType(fileType);
-        setUrl("file://"+filePath+"."+fileType);
+        this.filePath = filePath;
+        this.fileType = fileType;
+        this.url = "file://" + filePath + "." + fileType;
     }
 
-    public String getUrl() {
+    private String getUrl() {
         return url;
     }
-    public String getFilePath() {
+
+    private String getFilePath() {
         return filePath;
     }
-    public String getFileType() {
-        return fileType;
-    }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
-    public void setUrl(String url) {
-        this.url = url;
+    private String getFileType() {
+        return fileType;
     }
 
     @Override

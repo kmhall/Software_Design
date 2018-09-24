@@ -1,17 +1,21 @@
 import java.util.UUID;
 
 public class PostEncryptedFormRequest extends PostFormRequest{
-    private String encryptionScheme;
-    private static int count;
 
-    PostEncryptedFormRequest(UUID id, String ip, Form form,String encryptionScheme){
+    private static int count;
+    private String encryptionScheme;
+
+    public PostEncryptedFormRequest(UUID id, String ip, Form form,String encryptionScheme){
         super(id,ip,form);
         this.encryptionScheme = encryptionScheme;
         count++;
     }
 
-    public String getEncryptionScheme() {
+    private String getEncryptionScheme() {
         return encryptionScheme;
+    }
+    public static int count() {
+        return count;
     }
 
     @Override
@@ -19,7 +23,4 @@ public class PostEncryptedFormRequest extends PostFormRequest{
         return super.toString() + "\nThis form was encrypted using: " + getEncryptionScheme();
     }
 
-    public static int count(){
-        return count;
-    }
 }

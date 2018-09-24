@@ -1,22 +1,26 @@
 import java.util.UUID;
 
 public class GetFileRequest extends GetRequest {
-    private static int count = 0;
+
+    private static int count;
     private File file;
-    public GetFileRequest(UUID id, File file){
+
+    public GetFileRequest(UUID id, File file) {
         super(id);
         this.file = file;
         count++;
     }
 
-    public File getFile() {
+    public static int count() {
+        return count;
+    }
+
+    private File getFile() {
         return file;
     }
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+getFile().toString();
+        return super.toString() + "\n" + getFile().toString();
     }
-
-    public static int count(){return count;}
 }

@@ -1,28 +1,30 @@
 public class Payment {
+
     private String sender;
     private int amount;
     private String receiver;
 
-    Payment(String sender,int amount,String reciever){
+    public Payment(String sender, int amount, String receiver) {
         this.sender = sender;
         this.amount = amount;
-        this.receiver = reciever;
+        this.receiver = receiver;
     }
 
     public String getSender() {
         return sender;
     }
-    public String getReceiver() {
-        return receiver;
-    }
+
     public int getAmount() {
         return amount;
+    }
+    public String getReceiver() {
+        return receiver;
     }
 
     @Override
     public String toString() {
-        String req = "Payment Data\nPayment sender: "+getSender()+
-                "\nPayment amount: $"+ getAmount()+"\nPayment receiver: "+
+        String req = "Payment Data\nPayment sender: " + getSender() +
+                "\nPayment amount: $" + getAmount() + "\nPayment receiver: " +
                 getReceiver();
         return req;
     }
