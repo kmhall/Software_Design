@@ -3,9 +3,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class SimilarityFunctionsTest {
+public class SimilarityFunctionsJUnitTest {
 
-    public SimilarityFunctionsTest() {
+    public SimilarityFunctionsJUnitTest() {
     }
 
     @Test
