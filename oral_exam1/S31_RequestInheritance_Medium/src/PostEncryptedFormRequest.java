@@ -16,7 +16,7 @@ public class PostEncryptedFormRequest extends PostFormRequest{
 
     @Override
     public String toString() {
-        return super.toString() + "This form was encrypted using: " + getEncryptionScheme() + "\n";
+        return super.toString() + "\nThis form was encrypted using: " + getEncryptionScheme();
     }
 
     public static int count(){

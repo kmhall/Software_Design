@@ -22,7 +22,7 @@ public class Payment {
     @Override
     public String toString() {
         String req = "Payment Data\nPayment sender: "+getSender()+
-                "\nPayment amount: "+ getAmount()+"\nPayment receiver: "+
+                "\nPayment amount: $"+ getAmount()+"\nPayment receiver: "+
                 getReceiver();
         return req;
     }

@@ -13,7 +13,7 @@ public class Server {
 
         //load stack with random requests
         for (int i = 0; i < NUM_REQ_TYPES; i++) {
-            switch (6) {
+            switch (i) {
                 case 0:
                     requestStack.push(new Request(data.getRandUUID()));
                     break;
@@ -38,9 +38,9 @@ public class Server {
                 case 7:
                     requestStack.push(new GetFileRequest(data.getRandUUID(), data.getRandFile()));
                     break;
-//                case 8:
-//                    requestStack.push(new GetVideoRequest(data.getRandUUID(), data.getRandVideo()));
-//                    break;
+                case 8:
+                    requestStack.push(new GetVideoRequest(data.getRandUUID(), data.getRandVideo()));
+                    break;
                 default:
                     System.out.println("\n\n\nERROR: RANDOM GENERATOR FAILED\n\n\n");
             }
@@ -63,6 +63,6 @@ public class Server {
         System.out.println("Post Payment Requests: " + PostPaymentRequest.count());
         System.out.println("Post Encrypted Payment Requests: " + PostEncryptedPaymentRequest.count());
         System.out.println("Get File Requests: " + GetFileRequest.count());
-//        System.out.println("Get Video Requests: " + GetVideoRequest.count());
+        System.out.println("Get Video Requests: " + GetVideoRequest.count());
     }
 }

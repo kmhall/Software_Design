@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afe8c167-415f-4ec2-a281-392f25806ebd" name="Default Changelist" comment="Refactored Folder names,">
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/S31_RequestInheritance_Medium.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/DataGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostFormRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/example_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetVideoRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/test/SimilarityFunctionsJUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetFileRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetFileRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +76,7 @@
           <entry key="csv" value="4" />
           <entry key="groovy" value="2" />
           <entry key="iml" value="4" />
-          <entry key="java" value="93" />
+          <entry key="java" value="109" />
           <entry key="md" value="1" />
           <entry key="txt" value="3" />
           <entry key="xml" value="2" />
@@ -101,7 +88,7 @@
           <entry key="CSV" value="3" />
           <entry key="Groovy" value="2" />
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="93" />
+          <entry key="JAVA" value="109" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="XML" value="2" />
         </counts>
@@ -111,7 +98,7 @@
           <entry key="csv" value="2" />
           <entry key="dummy" value="25" />
           <entry key="groovy" value="8" />
-          <entry key="java" value="15785" />
+          <entry key="java" value="16257" />
           <entry key="txt" value="81" />
         </counts>
       </usages-collector>
@@ -119,126 +106,84 @@
         <counts>
           <entry key="CSV" value="2" />
           <entry key="Groovy" value="8" />
-          <entry key="JAVA" value="15785" />
+          <entry key="JAVA" value="16257" />
           <entry key="PLAIN_TEXT" value="106" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="35" column="159" selection-start-line="35" selection-start-column="143" selection-end-line="35" selection-end-column="159" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Request.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#310#311#0" expanded="true" />
-                    <element signature="e#340#341#0" expanded="true" />
-                    <element signature="e#385#386#0" expanded="true" />
-                    <element signature="e#424#425#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#461#462#0" expanded="true" />
-                    <element signature="e#500#501#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#334#335#0" expanded="true" />
-                    <element signature="e#373#374#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostFormRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#295#296#0" expanded="true" />
-                    <element signature="e#322#323#0" expanded="true" />
-                    <element signature="e#360#361#0" expanded="true" />
-                    <element signature="e#423#424#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
-                  <folding>
-                    <element signature="e#227#228#0" expanded="true" />
-                    <element signature="e#266#267#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
-                  <folding>
-                    <element signature="e#338#339#0" expanded="true" />
-                    <element signature="e#377#378#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetFileRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetVideoRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/DataGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/File.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -287,17 +232,19 @@
         <option value="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Hard/src/SimilarityFunctionsTest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/DataGenerator.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/File.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostRequest.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Form.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostFormRequest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Request.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Form.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetVideoRequest.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetFileRequest.java" />
+        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java" />
         <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java" />
-        <option value="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java" />
       </list>
     </option>
   </component>
@@ -369,7 +316,7 @@
     <property name="SearchEverywhereHistoryKey" value="b&#9;FILE&#9;file:///Users/Kyle_hall/IdeaProjects/khall5_swd/textbook_examples/ch24/books_examples/books_examples.iml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537810010983" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537812131773" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -571,7 +518,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32846716" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32576984" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3253886" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32642487" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -630,8 +577,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Welcome1 added to quiz path" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/cycleStatistics.java" />
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterAutoTest.java" />
     <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterTestTest.groovy" />
     <entry file="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/src/EasterJUnitTest.groovy" />
     <entry file="file://$PROJECT_DIR$/textbook_examples/ch03/Fig03_13/src/NameDialog.java">
@@ -851,34 +796,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java">
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Form.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/DataGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Form.java">
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="330">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -906,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -920,59 +858,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedFormRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="240">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostPaymentRequest.java">
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding>
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java">
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetFileRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="35" column="159" selection-start-line="35" selection-start-column="143" selection-end-line="35" selection-end-column="159" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Video.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/DataGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/PostEncryptedPaymentRequest.java">
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetVideoRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="30">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
           <folding>
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/src/GetRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
