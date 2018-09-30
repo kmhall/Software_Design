@@ -18,8 +18,8 @@ public class ButtonFrame extends JFrame {
         plainJButton = new JButton("Plain Button"); // button with text
         add(plainJButton); // add plainJButton to JFrame
 
-        Icon bug1 = new ImageIcon(getClass().getResource("bug1.gif"));
-        Icon bug2 = new ImageIcon(getClass().getResource("bug2.gif"));
+        Icon bug1 = new ImageIcon(getClass().getResource("bug1.GIF"));
+        Icon bug2 = new ImageIcon(getClass().getResource("bug2.GIF"));
         fancyJButton = new JButton("Fancy Button", bug1); // set image
         fancyJButton.setRolloverIcon(bug2); // set rollover image
         add(fancyJButton); // add fancyJButton to JFrame
