@@ -10,10 +10,6 @@ public class EasterTest {
         Scanner input = new Scanner(System.in); // create a Scanner object to obtain input from the command window
         System.out.println("Enter Year:"); // prompt for and read year
         EasterTest.easterCycle(input.nextInt());
-
-
-//        Easter e = new Easter(theYear); //Created to test failing case
-
     }
 
     private static void easterCycle(int theYear){
