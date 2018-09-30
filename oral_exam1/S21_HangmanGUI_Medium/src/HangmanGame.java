@@ -11,7 +11,7 @@ public class HangmanGame {
 
     public HangmanGame(String wordToGuess){
         this.wordToGuess = wordToGuess.toUpperCase();
-        this.remainingGuesses = 7;
+        this.remainingGuesses = 6;
         this.incorrectGuesses = new ArrayList<>();
         this.gameStatus = true;
         this.winStatus = false;
@@ -71,6 +71,10 @@ public class HangmanGame {
 
     public String getRemainingGuesses(){
         return "Remaining Guesses: "+remainingGuesses;
+    }
+
+    public int getRemainingGuessesInt(){
+        return remainingGuesses;
     }
 
     public String getIncorrectGuesses(){

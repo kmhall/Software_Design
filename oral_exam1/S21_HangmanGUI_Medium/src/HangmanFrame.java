@@ -6,12 +6,14 @@ public class HangmanFrame extends JFrame {
 
 
     private final JLabel gameStatus;
-    private final JTextField wordToBeGuessed;
+    private final JPasswordField wordToBeGuessed;
     private final JLabel guessesLeft;
     private final JLabel incorrectGuesses;
     private final JTextField enterLetters;
     private final JLabel wordDisplay;
     private final JLabel letterFieldLabel;
+
+    private final JLabel image;
 
     private HangmanGame hangman;
 
@@ -23,7 +25,7 @@ public class HangmanFrame extends JFrame {
         gameStatus = new JLabel("Enter a word to be guessed followed by ENTER");
         add(gameStatus);
 
-        wordToBeGuessed = new JTextField(20);
+        wordToBeGuessed = new JPasswordField(20);
         add(wordToBeGuessed);
 
 
@@ -47,6 +49,9 @@ public class HangmanFrame extends JFrame {
         incorrectGuesses.setVisible(false);
         add(incorrectGuesses);
 
+        image = new JLabel();
+        image.setVisible(false);
+        add(image);
 
         //Handle Actions in TextFields
         ActionHandler handler = new ActionHandler();
@@ -66,8 +71,12 @@ public class HangmanFrame extends JFrame {
                 guessesLeft.setVisible(true);
                 guessesLeft.setText(hangman.getRemainingGuesses());
 
+                image.setIcon(new ImageIcon("./oral_exam1/S21_HangmanGUI_Medium/images/stage0.png"));
+
                 incorrectGuesses.setVisible(true);
                 incorrectGuesses.setText("Incorrect Guesses: ");
+
+                image.setVisible(true);
 
                 letterFieldLabel.setVisible(true);
                 enterLetters.setVisible(true);
@@ -84,6 +93,8 @@ public class HangmanFrame extends JFrame {
                 if(hangman.getGameStatus() == true) {
                     guessesLeft.setText(hangman.getRemainingGuesses());
                     incorrectGuesses.setText(hangman.getIncorrectGuesses());
+                    int currentIcon = 6-hangman.getRemainingGuessesInt();
+                    image.setIcon(new ImageIcon("./oral_exam1/S21_HangmanGUI_Medium/images/stage"+ currentIcon+".png"));
                     wordDisplay.setText(hangman.getWordDisplay());
                     if(hangman.getWinStatus() == true){
                         gameStatus.setText("You Win!  Enter a new word into the box followed by ENTER for a new game");
@@ -95,6 +106,8 @@ public class HangmanFrame extends JFrame {
                 else{
                     guessesLeft.setText(hangman.getRemainingGuesses());
                     incorrectGuesses.setText(hangman.getIncorrectGuesses());
+                    image.setIcon(new ImageIcon("./oral_exam1/S21_HangmanGUI_Medium/images/stage6.png"));
+
                     wordDisplay.setText(hangman.getWordDisplay());
                     gameStatus.setText("Game Over! Enter a new word into the box followed by ENTER for a new game");
                     letterFieldLabel.setVisible(false);
