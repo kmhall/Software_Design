@@ -216,19 +216,6 @@ public class SimilarityFunctions {
             System.out.println("New data point belongs is evenly split");
         }
     }
-
-    /*
-    Unsupervised Learning:  k-means clustering Given a dataset and a
-    number of clusters k, your code will converge on a clustering of
-    the data points. After clustering, your program should print how
-    many data points are in each cluster.
-     */
-
-    public void kmeans(File dataset,int k){
-
-    }
-
-
 }
 
 

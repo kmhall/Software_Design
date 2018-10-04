@@ -6,10 +6,15 @@ import java.util.Scanner;
 public class EasterTest {
 
     public static void main(String[] args) {
-
         Scanner input = new Scanner(System.in); // create a Scanner object to obtain input from the command window
         System.out.println("Enter Year:"); // prompt for and read year
-        EasterTest.easterCycle(input.nextInt());
+
+        if(input.hasNextInt() && input.nextInt()>0){
+            EasterTest.easterCycle(input.nextInt());
+        }
+        else{
+            System.out.println("Input is not valid");
+        }
     }
 
     private static void easterCycle(int theYear){

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class ArabicToRomanFrame extends JFrame{
@@ -13,7 +12,7 @@ public class ArabicToRomanFrame extends JFrame{
 
         //Set up ArabicRORomanGUI
         super("Roman to Arabic || Arabic to Roman");
-        setLayout(new FlowLayout());
+        setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
 
         arabicLabel = new JLabel("Arabic Number");
         add(arabicLabel);
@@ -32,7 +31,7 @@ public class ArabicToRomanFrame extends JFrame{
 
     // inner class for key event handling
     private class KeyHandler implements KeyListener{
-        
+
         @Override
         public void keyTyped(KeyEvent e) {
         }

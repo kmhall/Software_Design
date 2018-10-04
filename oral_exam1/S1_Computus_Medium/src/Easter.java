@@ -1,32 +1,17 @@
 public class Easter {
 
-    //Call static methods in constructor
-
-    private final String [] listMonths;
+    private final String [] listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
     private int month;
     private int day;
     private int year;
 
     public Easter(int year){
-        if(year<0){
-            throw new IllegalArgumentException("Year is invalid");
-        }
-        this.listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
-
-        int [] date = calculateEaster(year);
+        int[] date = calculateEaster(year);
 
         this.day = date[0];
         this.month = date[1];
         this.year = year;
 
-    }
-
-    public int getMonth(){
-        return month;
-    }
-
-    public int getDay(){
-        return day;
     }
 
     private static int[] calculateEaster(int year){
@@ -51,8 +36,15 @@ public class Easter {
         return date;
     }
 
+    public int getMonth(){
+        return month;
+    }
+
+    public int getDay(){
+        return day;
+    }
+
     public String toString(){
         return "Easter: " + listMonths[month-1] + " " + day + ", " + year;
     }
-
 }

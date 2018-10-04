@@ -56,7 +56,6 @@ public class HangmanGame {
         winStatus = true;
     }
 
-
     public Boolean getWinStatus() {
         return winStatus;
     }
