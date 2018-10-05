@@ -1,9 +1,14 @@
 import java.io.File;
 
+/**
+ * Driver class for Similarity Functions. THis is where an instance of a SimilarityFunction is created.
+ */
 public class SimilarityFunctionsTest {
-     /*
-    Main method creates a new SimilarityFunction, creates a new File,
-    and a new Data-point. Medium problem is tested (Should return "New data point belongs to class2").
+
+    /**
+     * Main method creates a new SimilarityFunction, creates a new File,
+     * and a new Data-point. Medium problem is tested (Should return "New data point belongs to class2").
+     * @param args Main method arguments
      */
     public static void main(String[] args){
         SimilarityFunctions s = new SimilarityFunctions();

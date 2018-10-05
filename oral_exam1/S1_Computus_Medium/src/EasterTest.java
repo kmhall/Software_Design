@@ -3,8 +3,16 @@ import java.util.Scanner;
 //To do
 // 1.Test if input is  a number
 
+/**
+ * This is the driver class for testing Easter instances.
+ */
 public class EasterTest {
 
+    /**
+     * Main method of the driver class, all instances of Easter are contained within it.
+     * @param args Arguments passed into the main method
+     *
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // create a Scanner object to obtain input from the command window
         System.out.println("Enter Year:"); // prompt for and read year
@@ -12,6 +20,10 @@ public class EasterTest {
             EasterTest.easterCycle(input.nextInt());
     }
 
+    /**
+     * Static method for looping an entire cycle of easter dates.
+     * @param theYear Starting year for an easter cycle.
+     */
     private static void easterCycle(int theYear){
         int [] marchOccurrences = new int[31];
         int [] aprilOccurrences = new int[30];

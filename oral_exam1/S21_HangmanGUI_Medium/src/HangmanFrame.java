@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * HangmanFrame is a JFrame used as the GUI of a hangman game
+ */
 public class HangmanFrame extends JFrame {
 
     private final int  HANGMAN_FRAMES = 6;
@@ -18,6 +21,9 @@ public class HangmanFrame extends JFrame {
 
     private HangmanGame hangman;
 
+    /**
+     * Constructor for the HangmanFrame
+     */
     public HangmanFrame(){
         super("Hangman Game");
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -59,7 +65,15 @@ public class HangmanFrame extends JFrame {
         enterLetters.addActionListener(handler);
     }
 
+    /**
+     * Class to handle Actions on the frame
+     */
     private class ActionHandler implements ActionListener{
+        /**
+         * Asynchronous class that checks for enter key clicked. Once the enter key is pressed,
+         * it updates the frame accordingly. Validation is also done in this class.
+         * @param e ActionEvent
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == wordToBeGuessed && wordToBeGuessed.getText().length() > 0){

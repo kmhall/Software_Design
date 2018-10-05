@@ -1,13 +1,19 @@
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * JFrame for Arabic to Roman Conversions
+ */
 public class ArabicToRomanFrame extends JFrame{
 
     private final JLabel arabicLabel;
     private final JTextArea arabicTextArea;
     private final JLabel romanLabel;
     private final JTextArea romanTextArea;
-    
+
+    /**
+     * Constructor of ArabicToRomanFrame
+     */
     public ArabicToRomanFrame(){
 
         //Set up ArabicRORomanGUI
@@ -29,16 +35,29 @@ public class ArabicToRomanFrame extends JFrame{
         romanTextArea.addKeyListener(handler);
     }
 
-    // inner class for key event handling
+    /**
+     * Inner class for key event handling
+     */
     private class KeyHandler implements KeyListener{
-
+        /**
+         * Key down functionality
+         * @param e KeyEvent
+         */
         @Override
         public void keyTyped(KeyEvent e) {
         }
+        /**
+         * Key down and up functionality
+         * @param e KeyEvent
+         */
         @Override
         public void keyPressed(KeyEvent e) {
 
         }
+        /**
+         * Key up functionality
+         * @param e KeyEvent
+         */
         @Override
         public void keyReleased(KeyEvent e) {
             if(e.getSource() == arabicTextArea){

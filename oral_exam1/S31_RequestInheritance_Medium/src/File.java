@@ -1,3 +1,6 @@
+/**
+ * Class that has functionality for a File
+ */
 public class File {
 
     private String filePath;
@@ -5,6 +8,11 @@ public class File {
     private String url;
 
 
+    /**
+     * Constructor for a File
+     * @param filePath String, path to a file
+     * @param fileType String, what file type
+     */
     public File(String filePath, String fileType){
         this.filePath = filePath;
         this.fileType = fileType;
@@ -23,6 +31,10 @@ public class File {
         return fileType;
     }
 
+    /**
+     *Converts file data to displayable data
+     * @return String, displayable file
+     */
     @Override
     public String toString() {
         String req = "Universal Resource Locator (URL): "+ getUrl()+

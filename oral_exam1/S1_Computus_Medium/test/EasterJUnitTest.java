@@ -4,11 +4,18 @@ import org.junit.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 
+/**
+ * Junit Testing Cases
+ */
 
 //https://www.census.gov/srd/www/genhol/easter500.html
 public class EasterJUnitTest {
 
 //    public EasterJUnitTest(){}
+
+    /**
+     * Previous date testing cases
+     */
     @Test
     public void testPreviousEasterDates(){
 
@@ -37,6 +44,9 @@ public class EasterJUnitTest {
 
     }
 
+    /**
+     * Future date testing cases
+     */
     @Test
     public void testFutureEasterDates() {
             //10 Tests after 2018

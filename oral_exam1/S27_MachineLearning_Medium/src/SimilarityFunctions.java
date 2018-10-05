@@ -6,13 +6,21 @@ import java.util.List;
 import java.util.Arrays;
 
 
-
+/**
+ * Class that contains all the similarity functions
+ */
 public class SimilarityFunctions {
 
     /*
     Implementation of all three of all three similarity functions.
      */
 
+    /**
+     * Method that calculates the cosine similarity.
+     * @param vector1 double array, represents a vector
+     * @param vector2 double array, represents a vector
+     * @returndouble, cosine similarity between two vectors
+     */
     public double cosineSimilarity(double[] vector1, double[] vector2) {
 
         double similarity;
@@ -33,6 +41,11 @@ public class SimilarityFunctions {
         return similarity;
     }
 
+    /**
+     * Calculates the magnitude of a vector
+     * @param vector double array, represents a vector
+     * @return double, magnitude of vector
+     */
     private double magnitude(double[] vector) {
 
         double sumOfSquares = 0;
@@ -42,6 +55,12 @@ public class SimilarityFunctions {
         return Math.sqrt(sumOfSquares);
     } //Calculate magnitude for cosineSimilarity
 
+    /**
+     * Calculates the hamming distance between two strings
+     * @param input1 String, represents a binary string
+     * @param input2 String, represents a binary string
+     * @return int, hamming similarity between two binary strings
+     */
     public int hammingDistance(String input1, String input2) {
 
         int numDifference = 0;
@@ -53,6 +72,12 @@ public class SimilarityFunctions {
         return numDifference;
     }
 
+    /**
+     * Calculates the euclidean distance between two vectors
+     * @param vector1 double array, represents a vector
+     * @param vector2 double array, represents a vector
+     * @return double, euclidean distance between two vectors
+     */
     public double euclideanDistance(double[] vector1, double[] vector2) {
 
         double similarity;
@@ -65,13 +90,15 @@ public class SimilarityFunctions {
         return similarity;
     }
 
-    /*Supervised learning
-    Given a dataset, a new data point, and a parameter k, your solution will need to
-    find the k data points that are closest to the new data point as per your Euclidean
-    similarity function, and choose the most common class among them to classify the
-    new data point.
+    /**
+     * Given a dataset, a new data point, and a parameter k, your solution will need to
+     *     find the k data points that are closest to the new data point as per your Euclidean
+     *     similarity function, and choose the most common class among them to classify the
+     *     new data point.
+     * @param dataset File, containing the dataset for a supervised learning algorithm.
+     * @param newDataPoint double array, contains five points
+     * @param k int, number of data points to check proximity with
      */
-
     public void knearest(File dataset, double[] newDataPoint,int k){
 
         //dataArray is a list of lists containing the dataset in the form [data point 1, ... ,data point 5, class]
@@ -86,7 +113,13 @@ public class SimilarityFunctions {
 
     }
 
-    //Converts
+
+    /**
+     * Converts a csv file to an arrayList with a List of strings inside. The reason I used a List instead of an ArrayList
+     * is apparent on line 140. This crucial
+     * @param dataset File, csv file to convert to a data type
+     * @return ArrayList of Lists with data type String, represents the data points and the class they belong to
+     */
     private ArrayList <List<String>> csvToList(File dataset){
         //Documentation
         //https://stackoverflow.com/questions/40074840/reading-a-csv-file-into-a-array
@@ -103,6 +136,8 @@ public class SimilarityFunctions {
                  */
 
                 String[] values = line.split(",");
+
+                //Arrays. can be done to a List but not an ArrayList.
                 lines.add(Arrays.asList(values));
             }
             scanner.close();
@@ -115,6 +150,14 @@ public class SimilarityFunctions {
 
     }
 
+    /**
+     * This method converts the dataList into a 2D array for sorting purposes. This 2D array is a list of pair values
+     * in the form [the euclidean distance between the newDataPoint and the points in the dataList, class of point in dataList]
+     * @param dataList ArrayList of Lists with data type String,
+     *                 represents the data points and the class they belong to.
+     * @param newDataPoint double array, contains five points
+     * @return 2D Array that consists of the euclidean distance and the class that the value found the distance between
+     */
     private String[][] listToArray(ArrayList<List<String>> dataList, double[] newDataPoint) {
 
         //Declare a 2D array with the same length as the list
@@ -159,6 +202,10 @@ public class SimilarityFunctions {
         return dataArray;
     }
 
+    /**
+     * Method that orders the 2D array by using Insertion Sort. Orders the array by euclidean distance
+     * @param dataArray 2D array [the euclidean distance between the newDataPoint and the points in the dataList, class of point in dataList]
+     */
     private void orderArray( String[][] dataArray){
 
         double key;
@@ -184,6 +231,11 @@ public class SimilarityFunctions {
 
     }
 
+    /**
+     * Calculates is the new data point is closer to class1 or class2
+     * @param dataArray 2D sorted array in form [the euclidean distance between the newDataPoint and the points in the dataList, class of point in dataList]
+     * @param k int, number of data points to check proximity with
+     */
     private void calcClosest(String[][] dataArray,int k){
         int numClass1=0;
         int numClass2=0;

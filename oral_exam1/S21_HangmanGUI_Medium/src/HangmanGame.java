@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Class that holds all the logic of the HangmanGame
+ */
 public class HangmanGame {
 
     private Boolean winStatus;
@@ -9,6 +12,10 @@ public class HangmanGame {
     private ArrayList<String> incorrectGuesses;
     private Boolean gameStatus;
 
+    /**
+     * Constructor of a hangman game
+     * @param wordToGuess String, the word to be guessed
+     */
     public HangmanGame(String wordToGuess){
         this.wordToGuess = wordToGuess.toUpperCase();
         this.remainingGuesses = 6;
@@ -24,7 +31,10 @@ public class HangmanGame {
         }
     }
 
-
+    /**
+     * Method to add a new letter to the display string.
+     * @param letter String, new letter to be added
+     */
     public void newLetterAdded(String letter){
         if(wordToGuess.contains(letter.toUpperCase())){
             for(int i=0;i<wordToGuess.length();i++){
@@ -46,6 +56,9 @@ public class HangmanGame {
 
     }
 
+    /**
+     * Checks the win status and updates the private instance variable if there was a state change.
+     */
     private void winStatus(){
         for(int i=0;i< wordDisplay.length;i++){
             if(wordDisplay[i] == "_"){
@@ -56,10 +69,18 @@ public class HangmanGame {
         winStatus = true;
     }
 
+    /**
+     * Gets win status
+     * @return Boolean, win status
+     */
     public Boolean getWinStatus() {
         return winStatus;
     }
 
+    /**
+     * Gets word with correct guesses so far
+     * @return String, word with correct guesses
+     */
     public String getWordDisplay() {
         String req = "Word: ";
         for(int i=0;i<wordDisplay.length;i++){
@@ -68,14 +89,25 @@ public class HangmanGame {
         return req;
     }
 
+    /**
+     * Gets remaining guesses as a displayable string
+     * @return String, remaining guesses as a displayable string
+     */
     public String getRemainingGuesses(){
         return "Remaining Guesses: "+remainingGuesses;
     }
 
+    /**
+     * Gets remaining guesses
+     * @return int, remaining guesses
+     */
     public int getRemainingGuessesInt(){
         return remainingGuesses;
     }
-
+    /**
+     * Gets incorrect guesses as a displayable string
+     * @return String, incorrect guesses as a displayable string
+     */
     public String getIncorrectGuesses(){
         String req = "Incorrect Letters: ";
 
@@ -85,6 +117,11 @@ public class HangmanGame {
         return req;
     }
 
+    /**
+     * Gets the game status, this differs from the win status in that if the user looses,
+     * the frame doesn't update the incorrect guesses or the score.
+     * @return Boolean, gameStatus
+     */
     public Boolean getGameStatus() {
         return gameStatus;
     }

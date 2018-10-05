@@ -1,8 +1,14 @@
-
+/**
+ * Class that converts an Arabic number to a Roman numeral.
+ */
 public class ArabicToRomanCalculation {
 
     private String romanNumeral;
 
+    /**
+     * Constructor for ArabicToRomanCalculation
+     * @param arabicString The arabic number that wants to be converted
+     */
     public ArabicToRomanCalculation(String arabicString){
         //Validate that the input is a number
         if(arabicString.matches("\\d+")) {
@@ -19,6 +25,11 @@ public class ArabicToRomanCalculation {
         }
     }
 
+    /**
+     * Calculates a Roman numeral given an arabic numeral
+     * @param arabicNumber The arabic number that wants to be converted
+     * @return String of a roman numeral
+     */
     private static String calculateRomanNumeral(int arabicNumber){
         String romanNumeral = "";
         int significantDigit;
@@ -52,10 +63,18 @@ public class ArabicToRomanCalculation {
         return romanNumeral;
     }
 
+    /**
+     * Gets the Roman Numeral
+     * @return Roman Numeral
+     */
     private String getRomanNumber() {
         return romanNumeral;
     }
 
+    /**
+     *
+     * @return String of the roman Numeral
+     */
     @Override
     public String toString() {
         return getRomanNumber();

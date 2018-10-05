@@ -2,12 +2,17 @@ import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-
+/**
+ * Class for testing similarity functions
+ */
 public class SimilarityFunctionsJUnitTest {
 
     public SimilarityFunctionsJUnitTest() {
     }
 
+    /**
+     * Test Cosine Similarity function
+     */
     @Test
     public void testCosineSimilarity() {
         SimilarityFunctions s = new SimilarityFunctions();
@@ -27,6 +32,9 @@ public class SimilarityFunctionsJUnitTest {
         assertEquals(-1.0, s.cosineSimilarity(vector6, vector7), .001);
     }
 
+    /**
+     * Test Hamming Distance
+     */
     @Test
     public void testHammingDistance() {
         SimilarityFunctions s = new SimilarityFunctions();
@@ -46,6 +54,9 @@ public class SimilarityFunctionsJUnitTest {
         assertEquals(1,s.hammingDistance(f,g));
     }
 
+    /**
+     * Test Euclidean Distance
+     */
     @Test
     public void testEuclideanDistance(){
         SimilarityFunctions s = new SimilarityFunctions();

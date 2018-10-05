@@ -1,3 +1,6 @@
+/**
+ * Easter class contains all functionality to calculate and store an easter date.
+ */
 public class Easter {
 
     private final String [] listMonths = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
@@ -5,6 +8,10 @@ public class Easter {
     private int day;
     private int year;
 
+    /**
+     * Easter Constructor
+     * @param year The year of easter
+     */
     public Easter(int year){
         int[] date = calculateEaster(year);
 
@@ -14,6 +21,11 @@ public class Easter {
 
     }
 
+    /**
+     * Static method to calculate the day and month of easter. Static so that it can be called within the constructor.
+     * @param year The year of easter
+     * @return Integer array in the form [day,month]
+     */
     private static int[] calculateEaster(int year){
         int []date = new int[2];
 
@@ -36,14 +48,25 @@ public class Easter {
         return date;
     }
 
+    /**
+     * Get method for month
+     * @return month of easter
+     */
     public int getMonth(){
         return month;
     }
-
+    /**
+     * Get method for day
+     * @return day of easter
+     */
     public int getDay(){
         return day;
     }
 
+    /**
+     * Creates a  string that contains month day and year of easter
+     * @return String of a complete easter date
+     */
     public String toString(){
         return "Easter: " + listMonths[month-1] + " " + day + ", " + year;
     }
