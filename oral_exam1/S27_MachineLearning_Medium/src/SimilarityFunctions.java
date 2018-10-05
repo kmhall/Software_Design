@@ -75,7 +75,7 @@ public class SimilarityFunctions {
     public void knearest(File dataset, double[] newDataPoint,int k){
 
         //dataArray is a list of lists containing the dataset in the form [data point 1, ... ,data point 5, class]
-        List<List<String>> dataList = csvToList(dataset);
+        ArrayList<List<String>> dataList = csvToList(dataset);
 
         //dataArray is a 2D array of arrays in the form [euclideanDistance between the newDataPoint and the dataset points, dataset class]
         String[][] dataArray = listToArray(dataList, newDataPoint);
@@ -87,12 +87,12 @@ public class SimilarityFunctions {
     }
 
     //Converts
-    private List<List<String>> csvToList(File dataset){
+    private ArrayList <List<String>> csvToList(File dataset){
         //Documentation
         //https://stackoverflow.com/questions/40074840/reading-a-csv-file-into-a-array
 
         //2D ArrayList (Used so that size of the .csv can be variable)
-        List<List<String>> lines = new ArrayList<>();
+        ArrayList<List<String>> lines = new ArrayList<>();
         try{
             System.out.println("***************************");
             System.out.println("All lines of the ArrayList:");
@@ -120,7 +120,7 @@ public class SimilarityFunctions {
 
     }
 
-    private String[][] listToArray(List<List<String>> dataList, double[] newDataPoint) {
+    private String[][] listToArray(ArrayList<List<String>> dataList, double[] newDataPoint) {
 
         //Declare a 2D array with the same length as the list
         String [][] dataArray = new String[dataList.size()][2];
