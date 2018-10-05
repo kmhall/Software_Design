@@ -2,6 +2,7 @@ import java.util.UUID;
 
 /**
  * GetVideoRequest extends GetRequest. This is a specific type of get request
+ * @see GetRequest
  */
 public class GetVideoRequest extends GetRequest{
 

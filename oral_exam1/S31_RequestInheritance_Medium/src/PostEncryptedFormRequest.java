@@ -1,6 +1,7 @@
 import java.util.UUID;
 /**
  * PostEncryptedFormRequest extends PostFormRequest. This is a specific type of post request.
+ * @see PostFormRequest
  */
 public class PostEncryptedFormRequest extends PostFormRequest{
 

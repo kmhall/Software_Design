@@ -2,6 +2,9 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * This class is used to generate random data for testing purposes
+ */
 class DataGenerator {
     // fields to hold example data
     private Random rand;

@@ -2,6 +2,7 @@ import java.util.UUID;
 
 /**
  * PostEncryptedPaymentRequest extends PostPaymentRequest. This is a specific type of post request.
+ * @see PostPaymentRequest
  */
 public class PostEncryptedPaymentRequest extends  PostPaymentRequest{
 

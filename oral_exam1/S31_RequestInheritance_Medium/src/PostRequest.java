@@ -1,7 +1,8 @@
 import java.util.UUID;
 
 /**
- * PostRequest extends Request. This is a specific type of post request.
+ * PostRequest extends Request. This is a specific type of post request.'
+ * @see Request
  */
 public class PostRequest extends Request{
 

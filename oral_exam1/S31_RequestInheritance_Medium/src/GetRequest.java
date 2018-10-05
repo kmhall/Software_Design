@@ -2,6 +2,7 @@ import java.util.UUID;
 
 /**
  * Class GetRequest extends Request
+ * @see Request
  */
 public class GetRequest extends Request {
 

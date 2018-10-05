@@ -2,6 +2,7 @@ import java.util.UUID;
 
 /**
  * Class GetFileRequest is an extension fo the class GetRequest
+ * @see GetRequest
  */
 public class GetFileRequest extends GetRequest {
 

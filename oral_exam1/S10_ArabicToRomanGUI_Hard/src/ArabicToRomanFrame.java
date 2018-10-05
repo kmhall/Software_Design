@@ -3,6 +3,7 @@ import java.awt.event.*;
 
 /**
  * JFrame for Arabic to Roman Conversions
+ * @see JFrame
  */
 public class ArabicToRomanFrame extends JFrame{
 
@@ -16,7 +17,7 @@ public class ArabicToRomanFrame extends JFrame{
      */
     public ArabicToRomanFrame(){
 
-        //Set up ArabicRORomanGUI
+        //Set up ArabicToRomanGUI
         super("Roman to Arabic || Arabic to Roman");
         setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
 
@@ -37,6 +38,7 @@ public class ArabicToRomanFrame extends JFrame{
 
     /**
      * Inner class for key event handling
+     * @see KeyListener
      */
     private class KeyHandler implements KeyListener{
         /**

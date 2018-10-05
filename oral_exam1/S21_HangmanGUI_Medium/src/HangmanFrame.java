@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 /**
  * HangmanFrame is a JFrame used as the GUI of a hangman game
+ * @see JFrame
  */
 public class HangmanFrame extends JFrame {
 
