@@ -1,11 +1,16 @@
-import org.junit.jupiter.api.Test;
-import static groovy.util.GroovyTestCase.assertEquals;
+
+import org.junit.Test;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+
 
 //https://www.census.gov/srd/www/genhol/easter500.html
-class EasterJUnitTest {
+public class EasterJUnitTest {
 
+//    public EasterJUnitTest(){}
     @Test
-    void testPreviousEasterDates(){
+    public void testPreviousEasterDates(){
 
         //10 Tests before 2018
         Easter e1600 = new Easter(1600);
@@ -33,29 +38,29 @@ class EasterJUnitTest {
     }
 
     @Test
-    void testFutureEasterDates(){
-        //10 Tests after 2018
-        Easter e2020 = new Easter(2020);
-        Easter e2035 = new Easter(2035);
-        Easter e2045 = new Easter(2045);
-        Easter e2055 = new Easter(2055);
-        Easter e2065 = new Easter(2065);
-        Easter e2075 = new Easter(2075);
-        Easter e2085 = new Easter(2085);
-        Easter e2095 = new Easter(2095);
-        Easter e2096 = new Easter(2096);
-        Easter e2099 = new Easter(2099);
+    public void testFutureEasterDates() {
+            //10 Tests after 2018
+            Easter e2020 = new Easter(2020);
+            Easter e2035 = new Easter(2035);
+            Easter e2045 = new Easter(2045);
+            Easter e2055 = new Easter(2055);
+            Easter e2065 = new Easter(2065);
+            Easter e2075 = new Easter(2075);
+            Easter e2085 = new Easter(2085);
+            Easter e2095 = new Easter(2095);
+            Easter e2096 = new Easter(2096);
+            Easter e2099 = new Easter(2099);
 
-        assertEquals("Easter: April 12, 2020",e2020.toString());
-        assertEquals("Easter: March 25, 2035",e2035.toString());
-        assertEquals("Easter: April 9, 2045",e2045.toString());
-        assertEquals("Easter: April 18, 2055",e2055.toString());
-        assertEquals("Easter: March 29, 2065",e2065.toString());
-        assertEquals("Easter: April 7, 2075",e2075.toString());
-        assertEquals("Easter: April 15, 2085",e2085.toString());
-        assertEquals("Easter: April 24, 2095",e2095.toString());
-        assertEquals("Easter: April 15, 2096",e2096.toString());
-        assertEquals("Easter: April 12, 2099",e2099.toString());
+            assertEquals("Easter: April 12, 2020", e2020.toString());
+            assertEquals("Easter: March 25, 2035", e2035.toString());
+            assertEquals("Easter: April 9, 2045", e2045.toString());
+            assertEquals("Easter: April 18, 2055", e2055.toString());
+            assertEquals("Easter: March 29, 2065", e2065.toString());
+            assertEquals("Easter: April 7, 2075", e2075.toString());
+            assertEquals("Easter: April 15, 2085", e2085.toString());
+            assertEquals("Easter: April 24, 2095", e2095.toString());
+            assertEquals("Easter: April 15, 2096", e2096.toString());
+            assertEquals("Easter: April 12, 2099", e2099.toString());
 
 
     }
