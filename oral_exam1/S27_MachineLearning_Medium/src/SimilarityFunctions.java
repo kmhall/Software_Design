@@ -94,9 +94,6 @@ public class SimilarityFunctions {
         //2D ArrayList (Used so that size of the .csv can be variable)
         ArrayList<List<String>> lines = new ArrayList<>();
         try{
-            System.out.println("***************************");
-            System.out.println("All lines of the ArrayList:");
-
 
             Scanner scanner = new Scanner(dataset);
             while(scanner.hasNext()){
@@ -104,7 +101,6 @@ public class SimilarityFunctions {
                 /*
                 All lines of he ArrayList
                  */
-                System.out.println(line);
 
                 String[] values = line.split(",");
                 lines.add(Arrays.asList(values));
@@ -114,7 +110,6 @@ public class SimilarityFunctions {
         catch (FileNotFoundException e){
             e.printStackTrace();
         }
-        System.out.println("***************************");
 
         return lines;
 
@@ -160,8 +155,6 @@ public class SimilarityFunctions {
             dataArray[dataArrayIndex][0] = Double.toString(e);//Distance of currentList goes in here
             dataArrayIndex++;
         }
-        System.out.println(test);
-
 
         return dataArray;
     }
@@ -198,11 +191,9 @@ public class SimilarityFunctions {
         for(int i = 0;i<k;i++){
             if(dataArray[i][1].equals("\"class1\"")){
 
-                System.out.println(dataArray[i][1]);
                 numClass1++;
             }
             else {
-                System.out.println(dataArray[i][1]);
                 numClass2++;
             }
         }
