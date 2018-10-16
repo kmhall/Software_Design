@@ -1,17 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class TicTacToeBoard extends JFrame {
-
-    /**
-     * Game begins when one of the game options are True.
-     * [False,False,False]
-     * [Computer vs. Computer, Computer vs. Human, Human vs. Human]
-     * [True,False,False]
-     */
-    private Boolean[] gameOption;
 
     /**
      * TicTacToe Board Set Up
@@ -22,7 +16,6 @@ public class TicTacToeBoard extends JFrame {
     private JPanel[] panelPosition;
     private JLabel[] labelPosition;
 
-    private Boolean gameComplete;
 
     private JButton compComp;
     private JButton compHuman;
@@ -32,14 +25,25 @@ public class TicTacToeBoard extends JFrame {
 
     public TicTacToeBoard() {
         super("TicTacToe");
-        setLayout(new GridLayout(3, 4, 30, 30));
+        setLayout(new GridLayout(4, 3, 30, 30));
 
-        gameComplete = false;
-        gameOption = new Boolean[]{false,false,false};
         labelPosition = new JLabel[9];
         panelPosition = new JPanel[9];
 
 
+        compComp = new JButton("Comp vs. Comp");
+        compHuman = new JButton("Comp vs. Human");
+        humanHuman = new JButton("Human vs Human");
+
+        ButtonHandler buttonHandler = new ButtonHandler();
+
+        compComp.addActionListener(buttonHandler);
+        compHuman.addActionListener(buttonHandler);
+        humanHuman.addActionListener(buttonHandler);
+
+        add(compComp);
+        add(compHuman);
+        add(humanHuman);
 
         /*
         Add 9 Panels and Labels to the GUI as well as the corresponding Array.
@@ -52,8 +56,8 @@ public class TicTacToeBoard extends JFrame {
             panel.add(label);
 
             //Add MouseHandler to each JPanel
-            MouseHandler handler = new MouseHandler();
-            panel.addMouseListener(handler);
+            MouseHandler mouseHandler = new MouseHandler();
+            panel.addMouseListener(mouseHandler);
 
             //Add each panel to Container for TicTacToeBoard
             add(panel);
@@ -63,6 +67,28 @@ public class TicTacToeBoard extends JFrame {
             labelPosition[i] = label;
         }
     }
+
+    private class ButtonHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == compComp){
+                System.out.println("Starting Computer VS Computer Game");
+                clearBoard();
+            }
+            if(e.getSource() == compHuman){
+                System.out.println("Starting Computer VS Human Game");
+                clearBoard();
+
+            }
+            if(e.getSource() == humanHuman){
+                System.out.println("Starting Human VS Human Game");
+                clearBoard();
+
+            }
+
+        }
+    }
+
     private  class MouseHandler implements MouseListener {
 
         @Override
@@ -95,7 +121,13 @@ public class TicTacToeBoard extends JFrame {
         }
     }
 
-    public void startHumanVsHuman(){
+    private void clearBoard(){
+        for(int i=0;i<9;i++){
+            labelPosition[i].setText("_");
+        }
+    }
+
+    private void startHumanVsHuman(){
 
     }
 }
