@@ -7,10 +7,13 @@ import java.awt.event.MouseListener;
 
 public class TicTacToeBoard extends JFrame {
 
+    private final int MAX_MOVES = 9;
+
     private JButton compComp;
     private JButton compHuman;
     private JButton humanHuman;
 
+    private JLabel winnerLabel;
     /**
      * TicTacToe Board Set Up
      * 0    1   2
@@ -20,30 +23,19 @@ public class TicTacToeBoard extends JFrame {
     private JPanel[] panelPosition;
     private JLabel[] labelPosition;
 
-    private int currentPlayerTurn;
-    private Player[] currentPlayers;
-
-    private final int MAX_MOVES = 9;
-    private int moves;
-
-
-
-
 
     public TicTacToeBoard() {
         super("TicTacToe");
-        setLayout(new GridLayout(4, 3, 30, 30));
+
+
+        setLayout(new GridLayout(5, 3, 30, 30));
 
         labelPosition = new JLabel[9];
         panelPosition = new JPanel[9];
 
-        currentPlayers = new Player[2];
-        currentPlayerTurn = 0;
-        moves = 0;
-
         compComp = new JButton("Comp vs. Comp");
         compHuman = new JButton("Comp vs. Human");
-        humanHuman = new JButton("Human vs Human");
+        humanHuman = new JButton("Human vs. Human");
 
         ButtonHandler buttonHandler = new ButtonHandler();
 
@@ -76,8 +68,10 @@ public class TicTacToeBoard extends JFrame {
             panelPosition[i] = panel;
             labelPosition[i] = label;
         }
-    }
 
+        winnerLabel = new JLabel();
+        add(winnerLabel);
+    }
 
     private class ButtonHandler implements ActionListener{
         @Override
@@ -89,43 +83,39 @@ public class TicTacToeBoard extends JFrame {
                 ComputerPlayer player1 = new ComputerPlayer();
                 ComputerPlayer player2 = new ComputerPlayer();
 
-                startGame(player1,player2);
+                Player.setCurrentPlayers(player1,player2);
+
             }
             if (e.getSource() == compHuman) {
-
 
                 System.out.println("Starting Computer VS Human Game");
 
                 ComputerPlayer player1 = new ComputerPlayer();
                 HumanPlayer player2 = new HumanPlayer();
 
-                startGame(player1,player2);
+                Player.setCurrentPlayers(player1,player2);
             }
             else if(e.getSource() == humanHuman){
-
 
                 System.out.println("Starting Human VS Human Game");
 
                 HumanPlayer player1 = new HumanPlayer();
                 HumanPlayer player2 = new HumanPlayer();
 
-                startGame(player1,player2);
+                Player.setCurrentPlayers(player1,player2);
             }
+            clearBoard();
+            startGame();
         }
     }
 
-    private void startGame(Player player1,Player player2){
-        clearBoard();
+    private void startGame(){
 
-        currentPlayers[0] = player1;
-        currentPlayers[1] = player2;
-
-
-        while(checkForWinner() == false){
-             int index = currentPlayers[currentPlayerTurn].move();
-            if(validMove(index) == true){
-                updateBoard(index);
-                moves++;
+        while(winnerNotFound() == true){
+            int moveChoice = Player.getCurrentPlayer(Player.getCurrentPlayerTurn()).move();
+            if(validMove(moveChoice)){
+                Player.incrementMoves();
+                updateBoard(moveChoice);
             }
         }
     }
@@ -138,22 +128,24 @@ public class TicTacToeBoard extends JFrame {
     }
 
     public void updateBoard(int index){
-            if(currentPlayerTurn == 0){
+
+            if(Player.getCurrentPlayerTurn() == 0){
                 System.out.print("X " + index + " ");
                 labelPosition[index].setText("X");
-                currentPlayerTurn = 1;
-            }else if(currentPlayerTurn == 1){
+                Player.setNextTurn();
+            }
+            else if(Player.getCurrentPlayerTurn()  == 1) {
                 System.out.print("O "+ index + " ");
                 labelPosition[index].setText("O");
-                currentPlayerTurn = 0;
+                Player.setNextTurn();
         }
     }
 
     private void clearBoard(){
+        Player.resetPlayer();
         for(int i=0;i<9;i++){
             labelPosition[i].setText("_");
         }
-        moves = 0;
     }
 
     private  class MouseHandler implements MouseListener {
@@ -162,12 +154,12 @@ public class TicTacToeBoard extends JFrame {
         public void mouseClicked(MouseEvent e) {
 
             for(int i = 0;i<9;i++){
-                if(e.getSource() == panelPosition[i] && currentPlayerTurn == 0){
+                if(e.getSource() == panelPosition[i] && Player.getCurrentPlayerTurn() == 0){
                     labelPosition[i].setText("X");
-                    currentPlayerTurn = 1;
-                }else if(e.getSource() == panelPosition[i] && currentPlayerTurn == 1){
+                    Player.setNextTurn();
+                }else if(e.getSource() == panelPosition[i] &&  Player.getCurrentPlayerTurn() == 1){
                     labelPosition[i].setText("O");
-                    currentPlayerTurn = 0;
+                    Player.setNextTurn();
                 }
 
             }
@@ -192,45 +184,55 @@ public class TicTacToeBoard extends JFrame {
         }
     }
 
-    private Boolean checkForWinner(){
+    private Boolean winnerNotFound(){
 
-        if(moves == MAX_MOVES){
-            System.out.println("Game Over");
-            return true;
-        }
+
         if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(1)) && getLabelText(1).equals(getLabelText(2))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(0);
+            return false;
         }
         if(!getLabelText(3).equals("_") && getLabelText(3).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(5))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(3);
+            return false;
         }
         if(!getLabelText(6).equals("_") && getLabelText(6).equals(getLabelText(7)) && getLabelText(7).equals(getLabelText(8))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(6);
+            return false;
         }
         if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(3)) && getLabelText(3).equals(getLabelText(6))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(0);
+            return false;
         }
         if(!getLabelText(1).equals("_") && getLabelText(1).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(7))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(1);
+            return false;
         }
         if(!getLabelText(2).equals("_") && getLabelText(2).equals(getLabelText(5)) && getLabelText(5).equals(getLabelText(8))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(2);
+            return false;
         }
         if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(8))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(0);
+            return false;
         }
         if(!getLabelText(6).equals("_") && getLabelText(6).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(2))){
-            System.out.println("Game Over");
-            return true;
+            displayWinner(6);
+            return false;
         }
-        return false;
+        if(Player.getMoves() == MAX_MOVES){
+            winnerLabel.setText("Cats Game");
+            return false;
+        }
+        return true;
+    }
+
+    private void displayWinner(int index){
+        if(getLabelText(index) == "X"){
+            winnerLabel.setText("Player 1 Won!");
+        }
+        else{
+            winnerLabel.setText("Player 2 Won!");
+        }
     }
 
     public String getLabelText(int index){
