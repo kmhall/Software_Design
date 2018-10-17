@@ -8,19 +8,16 @@ import java.util.concurrent.TimeUnit;
 public class SharedArrayTest {
     public static void main(String[] arg) {
         // construct the shared object
-        SimpleArray sharedSimpleArray = new SimpleArray(9);
+        SimpleArray sharedSimpleArray = new SimpleArray(6);
 
         // create two tasks to write to the shared SimpleArray
         ArrayWriter writer1 = new ArrayWriter(1, sharedSimpleArray);
         ArrayWriter writer2 = new ArrayWriter(11, sharedSimpleArray);
-        ArrayWriter writer3 = new ArrayWriter(21, sharedSimpleArray);
-
 
         // execute the tasks with an ExecutorService
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(writer1);
         executorService.execute(writer2);
-        executorService.execute(writer3);
 
         executorService.shutdown();
 
