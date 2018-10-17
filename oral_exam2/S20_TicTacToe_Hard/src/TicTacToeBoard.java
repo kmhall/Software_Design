@@ -7,6 +7,10 @@ import java.awt.event.MouseListener;
 
 public class TicTacToeBoard extends JFrame {
 
+    private JButton compComp;
+    private JButton compHuman;
+    private JButton humanHuman;
+
     /**
      * TicTacToe Board Set Up
      * 0    1   2
@@ -19,9 +23,10 @@ public class TicTacToeBoard extends JFrame {
     private int currentPlayerTurn;
     private Player[] currentPlayers;
 
-    private JButton compComp;
-    private JButton compHuman;
-    private JButton humanHuman;
+    private final int MAX_MOVES = 9;
+    private int moves;
+
+
 
 
 
@@ -34,6 +39,7 @@ public class TicTacToeBoard extends JFrame {
 
         currentPlayers = new Player[2];
         currentPlayerTurn = 0;
+        moves = 0;
 
         compComp = new JButton("Comp vs. Comp");
         compHuman = new JButton("Comp vs. Human");
@@ -84,8 +90,6 @@ public class TicTacToeBoard extends JFrame {
                 ComputerPlayer player2 = new ComputerPlayer();
 
                 startGame(player1,player2);
-
-
             }
             if (e.getSource() == compHuman) {
 
@@ -96,8 +100,6 @@ public class TicTacToeBoard extends JFrame {
                 HumanPlayer player2 = new HumanPlayer();
 
                 startGame(player1,player2);
-
-
             }
             else if(e.getSource() == humanHuman){
 
@@ -108,9 +110,6 @@ public class TicTacToeBoard extends JFrame {
                 HumanPlayer player2 = new HumanPlayer();
 
                 startGame(player1,player2);
-
-
-
             }
         }
     }
@@ -123,9 +122,10 @@ public class TicTacToeBoard extends JFrame {
 
 
         while(checkForWinner() == false){
-            int index = currentPlayers[currentPlayerTurn].move();
+             int index = currentPlayers[currentPlayerTurn].move();
             if(validMove(index) == true){
                 updateBoard(index);
+                moves++;
             }
         }
     }
@@ -149,12 +149,11 @@ public class TicTacToeBoard extends JFrame {
         }
     }
 
-
-
     private void clearBoard(){
         for(int i=0;i<9;i++){
             labelPosition[i].setText("_");
         }
+        moves = 0;
     }
 
     private  class MouseHandler implements MouseListener {
@@ -172,7 +171,7 @@ public class TicTacToeBoard extends JFrame {
                 }
 
             }
-            checkForWinner();
+
         }
 
         @Override
@@ -195,7 +194,10 @@ public class TicTacToeBoard extends JFrame {
 
     private Boolean checkForWinner(){
 
-
+        if(moves == MAX_MOVES){
+            System.out.println("Game Over");
+            return true;
+        }
         if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(1)) && getLabelText(1).equals(getLabelText(2))){
             System.out.println("Game Over");
             return true;

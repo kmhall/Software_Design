@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player{
@@ -6,8 +7,12 @@ public class HumanPlayer extends Player{
     public int move(){
 
         System.out.println("Human Move");
-        Scanner a = new Scanner(System.in);
-        return a.nextInt();
+
+        Random generator = new Random();
+        return generator.nextInt(9);
+
+//        Scanner a = new Scanner(System.in);
+//        return a.nextInt();
     }
 
 }
