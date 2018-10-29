@@ -5,6 +5,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+
+/**
+Remaining Issues: Computer: All moves are made before display is updated.
+                  Human: All moves must be submitted before display is updated
+
+ Possible Solution: Multi Threading, StartGame is called within an async handler. New Thread must be made to handle
+                    game functionality while updating the display.
+ **/
 public class TicTacToeBoard extends JFrame {
 
     private final int MAX_MOVES = 9;
