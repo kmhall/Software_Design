@@ -13,13 +13,13 @@ public class BlockingBuffer implements Buffer {
     // place value into buffer
     public void blockingPut(AmazonOrder order) throws InterruptedException {
         buffer.put(order); // place value in buffer
-        System.out.println("Blocking Put");
+//        System.out.println("Blocking Put");
     }
 
     // return value from buffer
     public AmazonOrder blockingGet() throws InterruptedException {
         AmazonOrder readValue = buffer.take(); // remove value from buffer
-        System.out.println("Blocking Get");
+//        System.out.println("Blocking Get");
 
         return readValue;
     }
