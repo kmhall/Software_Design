@@ -21,28 +21,32 @@ public class ShippingCenter implements Runnable {
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
         }
-
     }
 
-    // read sharedLocation's value 10 times and sum the values
     public void run() {
-        AmazonOrder currentOrder =null;
+        AmazonOrder currentOrder = null;
 
         do {
             try {
-                // sleep 0 to 3 seconds, read value from buffer and add to sum
                 currentOrder = webServerToShippingCenter1.blockingGet();
                 currentOrder.setShippingCenterID(center);
 
-                System.out.println("*  Center "+ currentOrder.getShippingCenterID()+ "| "+currentOrder.getCity());
 
-                if(startsWithAtoP(currentOrder.getCategory())){
-                    sendOrder(shippingCenterToSection1,currentOrder);
+                if(currentOrder.getTerminatingKey() != true) {
+//                    System.out.println("*    Center " + currentOrder.getShippingCenterID() + "| " + currentOrder.getCity());
+
+
+                    if (!startsWithAtoP(currentOrder.getCategory())) {
+                        sendOrder(shippingCenterToSection2, currentOrder);
+                    } else {
+                        sendOrder(shippingCenterToSection1, currentOrder);
+                    }
                 }
                 else{
-                    sendOrder(shippingCenterToSection2,currentOrder);
-
-                }
+                        //Send terminating key
+                        sendOrder(shippingCenterToSection2,currentOrder);
+                        sendOrder(shippingCenterToSection1,currentOrder);
+                    }
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
             }

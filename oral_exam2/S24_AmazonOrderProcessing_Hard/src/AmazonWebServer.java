@@ -11,7 +11,7 @@ public class AmazonWebServer implements Runnable {
         private final BlockingBuffer webServerToShippingCenter2;
 
         private final File file = new File("./oral_exam2/S24_AmazonOrderProcessing_Hard/S24_AmazonOrderProcessing_OrdersFile.csv");
-        private final String [] locations = new String[]{"Los Angeles","San Francisco", "Seattle", "Denver"};
+        private final String [] locations = new String[]{"Los Angeles","San Fransisco", "Seattle", "Denver"};
         private final List shippingCenter1Locations = new ArrayList(Arrays.asList(locations));
 
         // constructor
@@ -54,26 +54,17 @@ public class AmazonWebServer implements Runnable {
                         }
                     }
 
-
-
+//                  Send terminating key in a fake order
+                    AmazonOrder terminate = new AmazonOrder(order.orderAsArray());
+                    terminate.setTerminatingKey();
+                    sendOrder(webServerToShippingCenter1,terminate);
+                    sendOrder(webServerToShippingCenter2,terminate);
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
 
-
-
             System.out.println("\nWeb Server Terminating\n");
-
-            /**
-             * Ship terminating key through process
-             *
-             * Termination is happening too soon, therefore the order gets sent down the incorrect process.
-             */
-//            order.setTerminatingKey();
-//            sendOrder(webServerToShippingCenter1,order);
-//            sendOrder(webServerToShippingCenter2,order);
-
         }
 
     } // end class Producer

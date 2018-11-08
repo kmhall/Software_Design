@@ -12,6 +12,7 @@ public class AmazonOrder {
 
     private int shippingCenterID;
     private int shippingSectionID;
+    private int deliveryTruckID;
 
     public AmazonOrder(String[] order){
         this.address = order[0];
@@ -20,10 +21,11 @@ public class AmazonOrder {
         this.zip = Integer.parseInt(order[3]);
         this.name = order[4];
         this.item = order[5];
-        this.category = order[6];
+        this.category = order[6].replaceAll("\\s+","");
 
         this.shippingCenterID = 0;
         this.shippingSectionID = 0;
+        this.deliveryTruckID = 0;
         this.terminatingKey = false;
 
     }
@@ -61,7 +63,31 @@ public class AmazonOrder {
         this.shippingSectionID = shippingSectionID;
     }
 
+    public int getDeliveryTruckID() {
+        return deliveryTruckID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getItem() {
+        return item;
+    }
+
+    public void setDeliveryTruckID(int deliveryTruckID) {
+        this.deliveryTruckID = deliveryTruckID;
+    }
+
     public String getCategory() {
         return category;
+    }
+
+    public String[] orderAsArray(){
+        return new String[]{ this.address, this.city, this.state, Integer.toString(this.zip), this.name, this.item, this.category};
     }
 }
