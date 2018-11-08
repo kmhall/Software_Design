@@ -44,10 +44,10 @@ public class AmazonTest {
         executorService.execute(new ShippingDock(sectionsToShippingDock1,dock1ToDeliveryTruck1,dock1ToDeliveryTruck2,1));
         executorService.execute(new ShippingDock(sectionsToShippingDock2,dock2ToDeliveryTruck1,dock2ToDeliveryTruck2,2));
 
-        executorService.execute(new DeliveryTruck(dock1ToDeliveryTruck1,1));
-        executorService.execute(new DeliveryTruck(dock1ToDeliveryTruck2,2));
-        executorService.execute(new DeliveryTruck(dock2ToDeliveryTruck1,3));
-        executorService.execute(new DeliveryTruck(dock2ToDeliveryTruck2,4));
+        executorService.execute(new DeliveryTruck(dock1ToDeliveryTruck1,1,1));
+        executorService.execute(new DeliveryTruck(dock1ToDeliveryTruck2,2,1));
+        executorService.execute(new DeliveryTruck(dock2ToDeliveryTruck1,3,2));
+        executorService.execute(new DeliveryTruck(dock2ToDeliveryTruck2,4,2));
 
 
         executorService.shutdown();

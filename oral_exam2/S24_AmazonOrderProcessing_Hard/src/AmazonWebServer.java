@@ -64,7 +64,7 @@ public class AmazonWebServer implements Runnable {
                 e.printStackTrace();
             }
 
-            System.out.println("\nWeb Server Terminating\n");
+//            System.out.println("\nWeb Server Terminating\n");
         }
 
     } // end class Producer

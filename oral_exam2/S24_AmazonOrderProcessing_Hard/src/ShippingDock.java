@@ -53,13 +53,13 @@ public class ShippingDock implements Runnable {
                     sendOrder(dock1ToDeliveryTruck2, currentOrder);
                 }
 
-//                System.out.println("***  Dock " + dock+ " Center "+ currentOrder.getShippingCenterID()+ " Section"+ currentOrder.getShippingSectionID()+" | "+currentOrder.getShippingSectionID());
+//                System.out.println("***  Dock " + dock+ " Center "+ currentOrder.getShippingCenterID()+ " Section "+ currentOrder.getShippingSectionID()+" | "+currentOrder.getShippingSectionID());
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
             }
         }
         while(currentOrder.getTerminatingKey() != true);
 
-        System.out.println("\nDock "+dock+" terminating\n");
+//        System.out.println("\nDock "+dock+" terminating\n");
     }
 }

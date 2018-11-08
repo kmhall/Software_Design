@@ -53,7 +53,7 @@ public class ShippingCenter implements Runnable {
         }
         while(currentOrder.getTerminatingKey() != true);
 
-        System.out.println("\nCenter "+ center +" terminating\n");
+//        System.out.println("\nCenter "+ center +" terminating\n");
     }
 
     public boolean startsWithAtoP(String category){

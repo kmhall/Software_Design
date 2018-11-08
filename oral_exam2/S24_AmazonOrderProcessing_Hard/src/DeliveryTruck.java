@@ -8,14 +8,16 @@ public class DeliveryTruck implements Runnable {
 
     private final BlockingBuffer shippingDockToTruck; // reference to shared object
     private final int truck;
+    private final int center;
 
     private final Queue<AmazonOrder> queue;
 
     // constructor
-    public DeliveryTruck(BlockingBuffer shippingDockToTruck,int truck) {
+    public DeliveryTruck(BlockingBuffer shippingDockToTruck,int truck,int center) {
 
         this.shippingDockToTruck = shippingDockToTruck;
         this.truck = truck;
+        this.center = center;
         this.queue = new LinkedList();;
     }
 
@@ -45,6 +47,9 @@ public class DeliveryTruck implements Runnable {
                         System.out.println(outputOrder.getAddress() +" | "+ outputOrder.getName() +" | "+ outputOrder.getItem() +" | "+outputOrder.getCategory()+" | "+outputOrder.getShippingCenterID()+" | "+outputOrder.getShippingSectionID()+" | "+outputOrder.getDeliveryTruckID());
                     }
                 }
+                if(currentOrder.getTerminatingKey() == true){
+                    System.out.println("**** No More Orders: Truck "+truck+" | Shipping Center "+center );
+                }
 
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
@@ -52,6 +57,6 @@ public class DeliveryTruck implements Runnable {
         }
         while(currentOrder.getTerminatingKey() != true);
 
-        System.out.println("\nTruck "+truck+" terminating\n");
+//        System.out.println("\nTruck "+truck+" terminating\n");
     }
 }

@@ -57,7 +57,7 @@ public class ShippingCenterSection implements Runnable {
         }
         while(currentOrder.getTerminatingKey() != true);
 
-        System.out.println("\nCenter "+center+" section "+section +" terminating\n");
+//        System.out.println("\nCenter "+center+" section "+section +" terminating\n");
     }
 }
 
