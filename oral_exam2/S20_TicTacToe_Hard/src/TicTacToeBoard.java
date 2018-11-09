@@ -13,7 +13,7 @@ Remaining Issues: Computer: All moves are made before display is updated.
  Possible Solution: Multi Threading, StartGame is called within an async handler. New Thread must be made to handle
                     game functionality while updating the display.
  **/
-public class TicTacToeBoard extends JFrame {
+public class TicTacToeBoard extends JFrame{
 
     private final int MAX_MOVES = 9;
 
@@ -81,6 +81,8 @@ public class TicTacToeBoard extends JFrame {
         add(winnerLabel);
     }
 
+
+
     private class ButtonHandler implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -139,12 +141,17 @@ public class TicTacToeBoard extends JFrame {
 
             if(Player.getCurrentPlayerTurn() == 0){
                 System.out.print("X " + index + " ");
-                labelPosition[index].setText("X");
+                UpdateBoard board = new UpdateBoard(labelPosition,index,"X");
+                board.execute();
+
+//                labelPosition[index].setText("X");
                 Player.setNextTurn();
             }
             else if(Player.getCurrentPlayerTurn()  == 1) {
                 System.out.print("O "+ index + " ");
-                labelPosition[index].setText("O");
+                UpdateBoard board = new UpdateBoard(labelPosition,index,"O");
+                board.execute();
+//                labelPosition[index].setText("O");
                 Player.setNextTurn();
         }
     }

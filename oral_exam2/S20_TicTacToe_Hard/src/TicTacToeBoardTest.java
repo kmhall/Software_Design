@@ -10,5 +10,6 @@ public class TicTacToeBoardTest {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600,400);
         frame.setVisible(true);
+
     }
 }
