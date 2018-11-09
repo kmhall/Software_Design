@@ -61,7 +61,7 @@ public class MazeTraversal implements Runnable{
 
     public void mazeTraversal(String[][] map,int currentY,int currentX) throws InterruptedException {
 
-        Thread.sleep(1);
+        Thread.sleep(1000);
 
         map[currentY][currentX] = "X";
 
