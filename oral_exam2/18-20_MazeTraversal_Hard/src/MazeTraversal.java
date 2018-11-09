@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MazeTraversal {
+public class MazeTraversal implements Runnable{
 
 
     private String[][] map;
@@ -59,7 +59,9 @@ public class MazeTraversal {
 
     }
 
-    public void mazeTraversal(String[][] map,int currentY,int currentX) {
+    public void mazeTraversal(String[][] map,int currentY,int currentX) throws InterruptedException {
+
+        Thread.sleep(1);
 
         map[currentY][currentX] = "X";
 
@@ -90,8 +92,6 @@ public class MazeTraversal {
                 possibleMoves++;
             }
 
-            System.out.println(possibleMoves);
-
             //Make a new move
             if (possibleMoves >= 1) {
 
@@ -103,7 +103,6 @@ public class MazeTraversal {
 
                 //Move Up
                 else if (map[currentY + 1][currentX].equals(".")) {
-                    System.out.println("Up dir");
 
                     mazeTraversal(map, currentY + 1, currentX);
                 }
@@ -173,5 +172,17 @@ public class MazeTraversal {
 
     public String[][] getMap() {
         return map;
+    }
+
+
+    @Override
+    public void run() {
+
+        try {
+            mazeTraversal(map,currentY,currentX);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

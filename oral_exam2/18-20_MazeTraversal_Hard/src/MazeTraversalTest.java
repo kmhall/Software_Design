@@ -1,6 +1,6 @@
 public class MazeTraversalTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         MazeTraversal map = new MazeTraversal();
 
         map.sanityCheck();
