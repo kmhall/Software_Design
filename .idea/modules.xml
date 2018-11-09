@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/oral_exam2/18-20_MazeTraversal_Hard/18-20_MazeTraversal_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/18-20_MazeTraversal_Hard/18-20_MazeTraversal_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator1/EXAMPLE_MVCCalculator1.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator1/EXAMPLE_MVCCalculator1.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator2/EXAMPLE_MVCCalculator2.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator2/EXAMPLE_MVCCalculator2.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator3/EXAMPLE_MVCCalculator3.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator3/EXAMPLE_MVCCalculator3.iml" />
@@ -64,6 +65,7 @@
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S21_HangmanGUI_Medium/S21_HangmanGUI_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S21_HangmanGUI_Medium/S21_HangmanGUI_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/S22_ImageRotator_Hard/S22_ImageRotator_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/S22_ImageRotator_Hard/S22_ImageRotator_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/S24_AmazonOrderProcessing_Hard/S24_AmazonOrderProcessing_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/S24_AmazonOrderProcessing_Hard/S24_AmazonOrderProcessing_Hard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam2/S25_SixCardGolf_Hard/S25_SixCardGolf_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/S25_SixCardGolf_Hard/S25_SixCardGolf_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Medium/S27_MachineLearning_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S27_MachineLearning_Medium/S27_MachineLearning_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/S31_RequestInheritance_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S31_RequestInheritance_Medium/S31_RequestInheritance_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
