@@ -1,24 +1,23 @@
-import java.util.ArrayList;
+import javax.swing.*;
 
-public class MazeTraversal implements Runnable{
+public class MazeTraversal extends SwingWorker<String,Object>{
 
 
     private String[][] map;
 
-    private final int[] startLocation;
     private int currentY;
     private int currentX;
 
-    public MazeTraversal(){
+    private final JTextArea mapDisplay;
+
+    public MazeTraversal(JTextArea mapDisplay){
+
+        this.mapDisplay = mapDisplay;
 
         map = new String[12][12];
 
-        startLocation = new int[]{2,0};
-
         currentY = 2;
         currentX = 0;
-
-
 
         String[] line0 = new String[]{"#","#","#","#","#","#","#","#","#","#","#","#"}; //Line currentY = 0
 
@@ -59,19 +58,22 @@ public class MazeTraversal implements Runnable{
 
     }
 
-    public void mazeTraversal(String[][] map,int currentY,int currentX) throws InterruptedException {
+    public void mazeTraversal(String[][] map,int currentY,int currentX) throws Exception {
 
-        Thread.sleep(1000);
+        Thread.sleep(200);
 
         map[currentY][currentX] = "X";
 
 
         if (currentX != 11) {
 
-            printMap();
+            done();
+
             int possibleMoves = 0;
 
-
+            /**
+             * Check to see if there is at least one possible direction to travel
+             */
             //Test to move left
             if (currentX - 1 >= 0 && map[currentY][currentX - 1].equals(".")) {
                 possibleMoves++;
@@ -92,6 +94,9 @@ public class MazeTraversal implements Runnable{
                 possibleMoves++;
             }
 
+            /**
+             * If there is a possible direction to travel, try: left-up-down-right.
+             */
             //Make a new move
             if (possibleMoves >= 1) {
 
@@ -115,14 +120,15 @@ public class MazeTraversal implements Runnable{
                 else if (currentX + 1 <= 11 && map[currentY][currentX + 1].equals(".")) {
                     mazeTraversal(map, currentY, currentX + 1);
                 }
-
-
             }
 
+            /**
+             * If there is not a direction to travel, backtrack to the previous position.
+             */
             //Traverse backwards
             else {
 
-                map[currentY][currentX] = "O";
+                map[currentY][currentX] = " ";
 
                 //Move Right
                 if (currentX + 1 <= 11 && map[currentY][currentX + 1].equals("X")) {
@@ -147,42 +153,31 @@ public class MazeTraversal implements Runnable{
     }
 
 
-
-
-
-
-    public void sanityCheck(){
-        System.out.print(map[0][0]);
-        System.out.print(map[0][11]);
-
-        System.out.print(map[11][0]);
-        System.out.print(map[11][11]);
-
-    }
-
-    public void printMap(){
-        System.out.println();
+    @Override
+    public String toString(){
+        String lines = "\t";
         for(String[] line: map){
             for(String unit: line){
-                System.out.print(unit + " ");
+                lines = lines +unit + " ";
             }
-            System.out.println();
+            lines = lines + "\r\n\t";
         }
+        return lines;
     }
-
-    public String[][] getMap() {
-        return map;
-    }
-
 
     @Override
-    public void run() {
+    protected String doInBackground() throws Exception {
+         mazeTraversal(map,currentY,currentX);
+        return null;
+    }
 
-        try {
-            mazeTraversal(map,currentY,currentX);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+    protected void done(){
+        mapDisplay.setText(this.toString());
 
     }
+
+
+
+
 }
