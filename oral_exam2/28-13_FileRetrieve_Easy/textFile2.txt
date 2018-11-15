@@ -1,0 +1,11 @@
+In VHDL I created three processes to implement a counter,
+ a shift register, and a parallel storage register. All three
+ of these processes had to be independent so that changing one
+ would not affect the contents of the others. On top of this functionality,
+  each register had to be able to complete its own operations. The counter had
+  to be able to display its contents, increment and decrement by 1, load with the
+   contents of the shift register, and reset to 0.  The shift register had to be
+   able to display its contents, rotate by 1 bit to the left, shift by one, load a
+   desired value, as well as be able to reset to 0. Finally, the parallel load register
+    displayed its contents, load the values of the shift register, load the contents of
+    the counter, and reset to 0
