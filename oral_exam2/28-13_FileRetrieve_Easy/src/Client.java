@@ -20,7 +20,7 @@ public class Client extends JFrame {
     public Client() {
         super("Client");
 
-        enterField = new JTextField("./oral_exam2/28-13_FileRetrieve_Easy/textFile.txt");
+        enterField = new JTextField("textFile.txt");
         enterField.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {

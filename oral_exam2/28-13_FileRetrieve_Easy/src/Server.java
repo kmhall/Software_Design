@@ -61,8 +61,10 @@ public class Server extends JFrame {
                 //Path to the file the client wants
                 String path = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
+                String basePath = "./oral_exam2/28-13_FileRetrieve_Easy/textFiles/";
                 //Create a file with the client's path
-                File file = new File(path);
+                System.out.println(basePath+path);
+                File file = new File(basePath+path);
 
                 String fileContents = "";
 
