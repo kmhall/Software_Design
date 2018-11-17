@@ -11,18 +11,32 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
+/**
+ * Client is a class that represents a client connecting to a server.
+ * This class has a GUI that displays a JTextField to ask for a file and
+ * a JTextaArea to display the retrieved file.
+ * @see JFrame
+ */
 public class Client extends JFrame {
     private JTextField enterField; // for entering messages
     private JTextArea displayArea; // for displaying messages
     private DatagramSocket socket; // socket to connect to server
 
-    // set up GUI and DatagramSocket
+    /**
+     * Constructs a Client. Adds components to the JFrame, adds an action listener to the text field,
+     * and create a DatagramSocket for sending and receiving packets.
+     */
     public Client() {
         super("Client");
 
         enterField = new JTextField("textFile.txt");
         enterField.addActionListener(
                 new ActionListener() {
+
+                    /**
+                     * actionPerformed attempts to create and send a packet.
+                     * @param event ActionEvent that handles the enter key being pressed in the JTextField
+                     */
                     public void actionPerformed(ActionEvent event) {
                         try // create and send packet
                         {
@@ -66,7 +80,9 @@ public class Client extends JFrame {
         }
     }
 
-    // wait for packets to arrive from Server, display packet contents
+    /**
+     * waitForPackets waits for packets to arrive from Server, displays packet contents
+     */
     public void waitForPackets() {
         while (true) {
             try // receive packet and display contents
@@ -91,10 +107,18 @@ public class Client extends JFrame {
         }
     }
 
-    // manipulates displayArea in the event-dispatch thread
+    /**
+     * displayMessage manipulates displayArea in the even dispatch thread.
+     * This is done in a separate thread asynchronously.
+     * @param messageToDisplay the message to be displayed on the JTextArea
+     */
     private void displayMessage(final String messageToDisplay) {
+        //Add updating the display area to the AWT event dispatching thread.
         SwingUtilities.invokeLater(
                 new Runnable() {
+                    /**
+                     * The contents of run are added to the event dispatch thread within an instance of runnable.
+                     */
                     public void run() // updates displayArea
                     {
                         displayArea.append(messageToDisplay);

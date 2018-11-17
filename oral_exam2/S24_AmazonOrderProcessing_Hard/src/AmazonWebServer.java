@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * AmazonWebServer is a class that converts a csv file to orders and sends orders to the correct distribution center.\
+ * @see Runnable
+ */
 public class AmazonWebServer implements Runnable {
 
         private final BlockingBuffer webServerToShippingCenter1; // reference to shared object
@@ -14,11 +18,21 @@ public class AmazonWebServer implements Runnable {
         private final String [] locations = new String[]{"Los Angeles","San Fransisco", "Seattle", "Denver"};
         private final List shippingCenter1Locations = new ArrayList(Arrays.asList(locations));
 
-        // constructor
-        public AmazonWebServer(BlockingBuffer webServerToShippingCenter1,BlockingBuffer webServerToShippingCenter2) {
+    /**
+     * Constructor for AmazonWebServer
+     * @param webServerToShippingCenter1 BlockingBuffer for shipping center 1
+     * @param webServerToShippingCenter2 BlockingBuffer for shipping center 2
+     */
+    public AmazonWebServer(BlockingBuffer webServerToShippingCenter1,BlockingBuffer webServerToShippingCenter2) {
             this.webServerToShippingCenter1 = webServerToShippingCenter1;
             this.webServerToShippingCenter2 = webServerToShippingCenter2;
-        }
+    }
+
+    /**
+     * Sends order to blocking buffer
+     * @param buffer BlockingBuffer to send to
+     * @param order AmazonOrder to send
+     */
 
     public void sendOrder(BlockingBuffer buffer,AmazonOrder order){
         try
@@ -30,7 +44,11 @@ public class AmazonWebServer implements Runnable {
 
     }
 
-        public void run() {
+    /**
+     * Converts csv into AmazonOrders and sends order to shipping center
+     * based on shipping location.
+     */
+    public void run() {
             AmazonOrder order = null;
 
             try {
@@ -54,7 +72,7 @@ public class AmazonWebServer implements Runnable {
                         }
                     }
 
-//                  Send terminating key in a fake order
+                    //Send terminating key in a fake order
                     AmazonOrder terminate = new AmazonOrder(order.orderAsArray());
                     terminate.setTerminatingKey();
                     sendOrder(webServerToShippingCenter1,terminate);
@@ -63,9 +81,8 @@ public class AmazonWebServer implements Runnable {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
-//            System.out.println("\nWeb Server Terminating\n");
+            //System.out.println("\nWeb Server Terminating\n");
         }
 
-    } // end class Producer
+    }
 

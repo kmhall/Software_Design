@@ -11,11 +11,17 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.util.Scanner;
 
+/**
+ * Server is a class that waits for packets from the client and sends packets back to the client.
+ * @see JFrame
+ */
 public class Server extends JFrame {
     private JTextArea displayArea; // displays packets received
     private DatagramSocket socket; // socket to connect to client
 
-    // set up GUI and DatagramSocket
+    /**
+     * Constructs a Server. Sets up the GUI and Datagram socket connection.
+     */
     public Server() {
         super("Server");
 
@@ -33,7 +39,11 @@ public class Server extends JFrame {
         }
     }
 
-    // wait for packets to arrive, display data and echo packet to client
+    /**
+     * waitForPackets tries to receive packets from the client, display it,
+     * create a file from file name sent, and send the contents of the file
+     * back to the client.
+     */
     public void waitForPackets() {
         while (true) {
             try // receive packet, display contents, return copy to client
@@ -53,10 +63,6 @@ public class Server extends JFrame {
                         "\nContaining:\n\t" + new String(receivePacket.getData(),
                         0, receivePacket.getLength()));
 
-                /**
-                 * ./oral_exam2/28-13_FileRetrieve_Easy/textFile.txt
-                 */
-
 
                 //Path to the file the client wants
                 String path = new String(receivePacket.getData(), 0, receivePacket.getLength());
@@ -66,9 +72,8 @@ public class Server extends JFrame {
                 System.out.println(basePath+path);
                 File file = new File(basePath+path);
 
+
                 String fileContents = "";
-
-
                 if (file.isFile()) {
                     System.out.println("Correct file path");
 
@@ -98,7 +103,14 @@ public class Server extends JFrame {
         }
     }
 
-    // echo packet to client
+    /**
+     * sendPacketToClient takes the DatagramPacket received and replaces the contents with
+     * the contents of the file. It then sends the data back to the client and displays a message in the server window.
+     *
+     * @param receivePacket The DatagramPacket received from the client
+     * @param newByte The file contents in a byte of data.
+     * @throws IOException Exception thrown if data cannot be sent.
+     */
     private void sendPacketToClient(DatagramPacket receivePacket,byte[] newByte)
             throws IOException {
         displayMessage("\n\nEcho data to client...");
@@ -112,7 +124,11 @@ public class Server extends JFrame {
         displayMessage("Packet sent\n");
     }
 
-    // manipulates displayArea in the event-dispatch thread
+    /**
+     * displayMessage manipulates displayArea in the even dispatch thread.
+     * This is done in a separate thread asynchronously.
+     * @param messageToDisplay the message to be displayed on the JTextArea
+     */
     private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {

@@ -2,6 +2,10 @@ import java.security.SecureRandom;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * DeliveryTruck is a class that represents a Delivery Truck in an order process.
+ * @see Runnable
+ */
 public class DeliveryTruck implements Runnable {
 
     private static final SecureRandom generator = new SecureRandom();
@@ -12,7 +16,12 @@ public class DeliveryTruck implements Runnable {
 
     private final Queue<AmazonOrder> queue;
 
-    // constructor
+    /**
+     * Constructs a DeliveryTruck
+     * @param shippingDockToTruck BlockingBuffer from a shippingDock
+     * @param truck int truck id
+     * @param center int center id
+     */
     public DeliveryTruck(BlockingBuffer shippingDockToTruck,int truck,int center) {
 
         this.shippingDockToTruck = shippingDockToTruck;
@@ -22,14 +31,14 @@ public class DeliveryTruck implements Runnable {
     }
 
 
-
-    // read sharedLocation's value 10 times and sum the values
+    /**
+     * Fill truck to capacity of 4 and then print the contents of the truck to the screen.
+     */
     public void run() {
         AmazonOrder currentOrder = null;
 
         do {
             try {
-                // sleep 0 to 3 seconds, read value from buffer and add to sum
                 currentOrder = shippingDockToTruck.blockingGet();
                 currentOrder.setDeliveryTruckID(truck);
 
@@ -41,7 +50,7 @@ public class DeliveryTruck implements Runnable {
                     Thread.sleep(generator.nextInt(10000));
 
                     while (!queue.isEmpty()){
-//                        System.out.println("**** Truck "+truck);
+                    //System.out.println("**** Truck "+truck);
 
                         AmazonOrder outputOrder = queue.remove();
                         System.out.println(outputOrder.getAddress() +" | "+ outputOrder.getName() +" | "+ outputOrder.getItem() +" | "+outputOrder.getCategory()+" | "+outputOrder.getShippingCenterID()+" | "+outputOrder.getShippingSectionID()+" | "+outputOrder.getDeliveryTruckID());
@@ -57,6 +66,6 @@ public class DeliveryTruck implements Runnable {
         }
         while(currentOrder.getTerminatingKey() != true);
 
-//        System.out.println("\nTruck "+truck+" terminating\n");
+        //System.out.println("\nTruck "+truck+" terminating\n");
     }
 }

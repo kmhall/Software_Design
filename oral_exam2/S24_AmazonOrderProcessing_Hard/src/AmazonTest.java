@@ -3,8 +3,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * AmazonTest is a class that creates threads of all the different processes
+ */
 public class AmazonTest {
 
+    /**
+     * Main method of AmazonTest, creates all threads and buffers
+     * @param args Arguments
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
 
         // create new thread pool with two threads
