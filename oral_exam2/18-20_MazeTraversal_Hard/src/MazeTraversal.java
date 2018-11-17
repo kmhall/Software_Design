@@ -7,7 +7,6 @@ import javax.swing.*;
  */
 public class MazeTraversal extends SwingWorker{
 
-
     //2D array of the map
     private String[][] map;
 
@@ -79,7 +78,7 @@ public class MazeTraversal extends SwingWorker{
      * @param currentX The current X position
      * @throws Exception Thread.sleep might throw an Exception
      */
-    public void mazeTraversal(String[][] map,int currentY,int currentX) throws Exception {
+    private void mazeTraversal(String[][] map,int currentY,int currentX) throws Exception {
 
         //Causes the current executing thread to sleep for 200ms.
         Thread.sleep(200);

@@ -46,7 +46,7 @@ public class MazeTraversalGUI extends JFrame {
     /**
      * Main method of MazeTraversalGUI. Creates an instance of a MazeTraversalGUI, sets close operation,
      * sets size of the window, and sets the visibility.
-     * @param args
+     * @param args command line arguments
      */
     public static void main(String[] args) {
 
