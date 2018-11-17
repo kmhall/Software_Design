@@ -55,9 +55,7 @@ public class LevenshteinDistance {
                 }
             }
         }
-
         minimumDistance = matrix[secondWord.length()][firstWord.length()];
-
     }
 
     private int min(int i,int j){
@@ -103,10 +101,6 @@ public class LevenshteinDistance {
             }
             startingPlace = matrix[i][j];
         }
-
-
-
-
     }
 
     public String backTrackMin(int i, int j){
