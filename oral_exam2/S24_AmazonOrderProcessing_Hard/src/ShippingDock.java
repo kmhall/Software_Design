@@ -1,4 +1,7 @@
-
+/**
+ * ShippingDock is a class that represents a shipping dock in an amazon order process.
+ * @see Runnable
+ */
 public class ShippingDock implements Runnable {
 
     private final BlockingBuffer sectionToShippingDock; // reference to shared object
@@ -6,7 +9,13 @@ public class ShippingDock implements Runnable {
     private final BlockingBuffer dock1ToDeliveryTruck2;
     private final int dock;
 
-    // constructor
+    /**
+     * Constructs a ShippingDock
+     * @param sectionToShippingDock BlockingBuffer from section to the dock
+     * @param docktoDeliveryTruck1 BlockingBuffer from dock to truck
+     * @param dock1ToDeliveryTruck2 BlockingBuffer from dock to truck
+     * @param dock
+     */
     public ShippingDock(BlockingBuffer sectionToShippingDock,BlockingBuffer docktoDeliveryTruck1,BlockingBuffer dock1ToDeliveryTruck2,int dock) {
         this.sectionToShippingDock = sectionToShippingDock;
         this.docktoDeliveryTruck1 = docktoDeliveryTruck1;
@@ -15,6 +24,11 @@ public class ShippingDock implements Runnable {
         this.dock = dock;
     }
 
+    /**
+     * Sends an AmazonOrder to the appropriate BlockingBuffer
+     * @param buffer BlockingBuffer to send to
+     * @param order AmazonOrder to send
+     */
     public void sendOrder(BlockingBuffer buffer,AmazonOrder order){
         try
         {
@@ -24,6 +38,10 @@ public class ShippingDock implements Runnable {
         }
     }
 
+    /**
+     * Gets an amazon orders from the two sections and sends orders to the appropriate truck. Fills truck 1 first
+     * and then fills truck 2. If both trucks fill, the first will begin to be filled again.
+     */
     public synchronized void run() {
         AmazonOrder currentOrder = null;
         int fillTruckA = 0;
@@ -53,13 +71,13 @@ public class ShippingDock implements Runnable {
                     sendOrder(dock1ToDeliveryTruck2, currentOrder);
                 }
 
-//                System.out.println("***  Dock " + dock+ " Center "+ currentOrder.getShippingCenterID()+ " Section "+ currentOrder.getShippingSectionID()+" | "+currentOrder.getShippingSectionID());
+                //System.out.println("***  Dock " + dock+ " Center "+ currentOrder.getShippingCenterID()+ " Section "+ currentOrder.getShippingSectionID()+" | "+currentOrder.getShippingSectionID());
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
             }
         }
         while(currentOrder.getTerminatingKey() != true);
 
-//        System.out.println("\nDock "+dock+" terminating\n");
+        //System.out.println("\nDock "+dock+" terminating\n");
     }
 }

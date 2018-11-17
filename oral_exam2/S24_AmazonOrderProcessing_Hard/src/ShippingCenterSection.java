@@ -1,5 +1,9 @@
 import java.security.SecureRandom;
 
+/**
+ * ShippingCenterSection is a class that represents the Section of a Shipping Center in an Amazon order process.
+ * @see Runnable
+ */
 public class ShippingCenterSection implements Runnable {
 
     private static final SecureRandom generator = new SecureRandom();
@@ -10,14 +14,25 @@ public class ShippingCenterSection implements Runnable {
     private final int center;
     private final int section;
 
-    // constructor
-    public ShippingCenterSection(BlockingBuffer shippingCenter1ToSection,BlockingBuffer sectionToShippingDock, int center, int section) {
-        this.shippingCenterToSection = shippingCenter1ToSection;
+    /**
+     * Constructs a ShippingCenterSection
+     * @param shippingCenterToSection BlockingBuffer from shippingCenter to Section
+     * @param sectionToShippingDock BlockingBuffer from section to dock
+     * @param center int center id
+     * @param section int section id
+     */
+    public ShippingCenterSection(BlockingBuffer shippingCenterToSection,BlockingBuffer sectionToShippingDock, int center, int section) {
+        this.shippingCenterToSection = shippingCenterToSection;
         this.sectionToShippingDock = sectionToShippingDock;
         this.center = center;
         this.section = section;
     }
 
+    /**
+     * Sends Amazon order to the correct BlockingBuffer synchronously.
+     * @param buffer
+     * @param order
+     */
     public synchronized void sendOrder(BlockingBuffer buffer,AmazonOrder order){
         try
         {
@@ -28,13 +43,15 @@ public class ShippingCenterSection implements Runnable {
 
     }
 
-    // read sharedLocation's value 10 times and sum the values
+    /**
+     * Gets amazon order from the shipping center and sends it to the dock.
+     * This is done synchronously due to multiple sections accessing the same buffer.
+     */
     public synchronized void run() {
         AmazonOrder currentOrder = null;
 
         do {
             try {
-                // sleep 0 to 3 seconds, read value from buffer and add to sum
                 currentOrder = shippingCenterToSection.blockingGet();
                 currentOrder.setShippingSectionID(section);
 
@@ -42,7 +59,7 @@ public class ShippingCenterSection implements Runnable {
 
                 if(currentOrder.getTerminatingKey() != true) {
 
-//                System.out.println("**   Center "+ currentOrder.getShippingCenterID()+ " Section"+ currentOrder.getShippingSectionID()+" | "+currentOrder.getCategory());
+                    //System.out.println("**   Center "+ currentOrder.getShippingCenterID()+ " Section"+ currentOrder.getShippingSectionID()+" | "+currentOrder.getCategory());
                     sendOrder(sectionToShippingDock, currentOrder);
 
                 }
@@ -57,7 +74,7 @@ public class ShippingCenterSection implements Runnable {
         }
         while(currentOrder.getTerminatingKey() != true);
 
-//        System.out.println("\nCenter "+center+" section "+section +" terminating\n");
+        //System.out.println("\nCenter "+center+" section "+section +" terminating\n");
     }
 }
 
