@@ -3,12 +3,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The MazeTraversalGUI class represents the GUI of a MazeTraversal.
+ * @see JFrame
+ */
 public class MazeTraversalGUI extends JFrame {
+
 
     private final JTextArea mapDisplay;
 
     private final JButton startButton;
 
+    /**
+     * Constructor of MazeTraversalGUI. Sets layout, creates JTextArea and JButton,
+     * adds ActionListener to button. When the button is clicked execute() of SwingWorker,
+     * is called and the background process begins.
+     */
     public MazeTraversalGUI(){
         super("Maze Traversal");
         setLayout(new GridLayout(2,1));
@@ -25,8 +35,7 @@ public class MazeTraversalGUI extends JFrame {
                                 new MazeTraversal(mapDisplay);
                         task.execute(); // execute the task
                     }
-                }
-        );
+                });
 
         add(startButton);
         add(mapDisplay);
@@ -34,6 +43,11 @@ public class MazeTraversalGUI extends JFrame {
     }
 
 
+    /**
+     * Main method of MazeTraversalGUI. Creates an instance of a MazeTraversalGUI, sets close operation,
+     * sets size of the window, and sets the visibility.
+     * @param args
+     */
     public static void main(String[] args) {
 
         MazeTraversalGUI application = new MazeTraversalGUI();

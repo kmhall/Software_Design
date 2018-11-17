@@ -1,15 +1,29 @@
 import javax.swing.*;
 
-public class MazeTraversal extends SwingWorker<String,Object>{
+
+/**
+ *  The MazeTraversal class to represent characteristics of traversing and back tracking a maze.
+ * @see SwingWorker
+ */
+public class MazeTraversal extends SwingWorker{
 
 
+    //2D array of the map
     private String[][] map;
 
+    //Current starting position
     private int currentY;
     private int currentX;
 
+    //Reference to the JTextArea that the map is displayed in.
     private final JTextArea mapDisplay;
 
+
+    /**
+     * Constructs a new MazeTraversal.
+     * Creates a default map using a 2D array and initializes the position of the map.
+     * @param mapDisplay JTextArea to view the 2D array.
+     */
     public MazeTraversal(JTextArea mapDisplay){
 
         this.mapDisplay = mapDisplay;
@@ -58,22 +72,33 @@ public class MazeTraversal extends SwingWorker<String,Object>{
 
     }
 
+    /**
+     * Recursive method that traverses a maze.
+     * @param map 2D array of the map
+     * @param currentY The current Y position
+     * @param currentX The current X position
+     * @throws Exception Thread.sleep might throw an Exception
+     */
     public void mazeTraversal(String[][] map,int currentY,int currentX) throws Exception {
 
+        //Causes the current executing thread to sleep for 200ms.
         Thread.sleep(200);
 
+        //Sets current position to a X
         map[currentY][currentX] = "X";
 
 
+        //Checks out of bounds condition (win condition)
         if (currentX != 11) {
-
+            //Updates display
             done();
 
-            int possibleMoves = 0;
 
-            /**
+            int possibleMoves = 0;
+            /*
              * Check to see if there is at least one possible direction to travel
              */
+
             //Test to move left
             if (currentX - 1 >= 0 && map[currentY][currentX - 1].equals(".")) {
                 possibleMoves++;
@@ -94,7 +119,7 @@ public class MazeTraversal extends SwingWorker<String,Object>{
                 possibleMoves++;
             }
 
-            /**
+            /*
              * If there is a possible direction to travel, try: left-up-down-right.
              */
             //Make a new move
@@ -122,9 +147,10 @@ public class MazeTraversal extends SwingWorker<String,Object>{
                 }
             }
 
-            /**
+            /*
              * If there is not a direction to travel, backtrack to the previous position.
              */
+
             //Traverse backwards
             else {
 
@@ -152,7 +178,10 @@ public class MazeTraversal extends SwingWorker<String,Object>{
         }
     }
 
-
+    /**
+     * Converts map to a String for JTextArea display.
+     * @return String of map
+     */
     @Override
     public String toString(){
         String lines = "\t";
@@ -165,6 +194,12 @@ public class MazeTraversal extends SwingWorker<String,Object>{
         return lines;
     }
 
+    /**
+     * Method to be ran in the background of a thread.
+     * Used so that recursive calls can be done while the display updates.
+     * @return String
+     * @throws Exception if unable to compute a result
+     */
     @Override
     protected String doInBackground() throws Exception {
          mazeTraversal(map,currentY,currentX);
@@ -172,6 +207,10 @@ public class MazeTraversal extends SwingWorker<String,Object>{
     }
 
 
+    /**
+     * Updates the mapDisplay to reflect the current state of the MazeTraversal.
+     */
+    @Override
     protected void done(){
         mapDisplay.setText(this.toString());
 
