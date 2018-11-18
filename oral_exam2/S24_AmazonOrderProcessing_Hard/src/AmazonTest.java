@@ -11,7 +11,7 @@ public class AmazonTest {
     /**
      * Main method of AmazonTest, creates all threads and buffers
      * @param args Arguments
-     * @throws InterruptedException
+     * @throws InterruptedException Exception
      */
     public static void main(String[] args) throws InterruptedException {
 
