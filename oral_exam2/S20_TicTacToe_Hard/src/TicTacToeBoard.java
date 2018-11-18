@@ -1,258 +1,209 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
+import java.util.Scanner;
 
 /**
-Remaining Issues: Computer: All moves are made before display is updated.
-                  Human: All moves must be submitted before display is updated
+ * TicTaToeBoard is a class that represents a tic tac toe board. This is where the board is created, players are added,
+ * and validation is done.
+ */
+public class TicTacToeBoard {
 
- Possible Solution: Multi Threading, StartGame is called within an async handler. New Thread must be made to handle
-                    game functionality while updating the display.
- **/
-public class TicTacToeBoard extends JFrame{
+    private Boolean gameOver;
 
-    private final int MAX_MOVES = 9;
+    private String[] board;
+    String playerChoice;
 
-    private JButton compComp;
-    private JButton compHuman;
-    private JButton humanHuman;
+    private Player Player1;
+    private Player Player2;
 
-    private JLabel winnerLabel;
+
     /**
-     * TicTacToe Board Set Up
-     * 0    1   2
-     * 3    4   5
-     * 6    7   8
+     * Constructs a TicTacToeBoard and validates the type of players.
      */
-    private JPanel[] panelPosition;
-    private JLabel[] labelPosition;
+    public TicTacToeBoard(){
 
+        board = new String[]{"_","_","_","_","_","_","_","_","_"};
 
-    public TicTacToeBoard() {
-        super("TicTacToe");
+        //Validate input of game type
+        Scanner scanner = new Scanner(System.in);
+        gameOver = false;
+        do {
+            System.out.print("Enter code to start game: \n Human vs. Human: 'HH' \n Human vs Computer: 'HC' \n Computer vs Computer: 'CC'\n");
+            playerChoice = scanner.next();
 
-
-        setLayout(new GridLayout(5, 3, 30, 30));
-
-        labelPosition = new JLabel[9];
-        panelPosition = new JPanel[9];
-
-        compComp = new JButton("Comp vs. Comp");
-        compHuman = new JButton("Comp vs. Human");
-        humanHuman = new JButton("Human vs. Human");
-
-        ButtonHandler buttonHandler = new ButtonHandler();
-
-        compComp.addActionListener(buttonHandler);
-        compHuman.addActionListener(buttonHandler);
-        humanHuman.addActionListener(buttonHandler);
-
-        add(compComp);
-        add(compHuman);
-        add(humanHuman);
-
-        /*
-        Add 9 Panels and Labels to the GUI as well as the corresponding Array.
-         */
-        for (int i = 0; i < 9; i++) {
-            JPanel panel = new JPanel();
-            panel.setBackground(Color.PINK);
-
-            JLabel label = new JLabel("_");
-            panel.add(label);
-
-            //Add MouseHandler to each JPanel
-            MouseHandler mouseHandler = new MouseHandler();
-            panel.addMouseListener(mouseHandler);
-
-            //Add each panel to Container for TicTacToeBoard
-            add(panel);
-
-            //Add panels and labels to corresponding Array
-            panelPosition[i] = panel;
-            labelPosition[i] = label;
-        }
-
-        winnerLabel = new JLabel();
-        add(winnerLabel);
+        }while(!validPlayerChoiceAndSetPlayers());
     }
 
-
-
-    private class ButtonHandler implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == compComp) {
-
-                System.out.println("Starting Computer VS Computer Game");
-
-                ComputerPlayer player1 = new ComputerPlayer();
-                ComputerPlayer player2 = new ComputerPlayer();
-
-                Player.setCurrentPlayers(player1,player2);
-
-            }
-            if (e.getSource() == compHuman) {
-
-                System.out.println("Starting Computer VS Human Game");
-
-                ComputerPlayer player1 = new ComputerPlayer();
-                HumanPlayer player2 = new HumanPlayer();
-
-                Player.setCurrentPlayers(player1,player2);
-            }
-            else if(e.getSource() == humanHuman){
-
-                System.out.println("Starting Human VS Human Game");
-
-                HumanPlayer player1 = new HumanPlayer();
-                HumanPlayer player2 = new HumanPlayer();
-
-                Player.setCurrentPlayers(player1,player2);
-            }
-            clearBoard();
-            startGame();
+    /**
+     * Tests for valid player choice and sets players accordingly.
+     * @return Boolean, if the player choice is valid
+     */
+    private Boolean validPlayerChoiceAndSetPlayers(){
+        if(playerChoice.toUpperCase().matches("HH")){
+            Player1 = new HumanPlayer();
+            Player2 = new HumanPlayer();
+            return true;
         }
-    }
-
-    private void startGame(){
-
-        while(winnerNotFound() == true){
-            int moveChoice = Player.getCurrentPlayer(Player.getCurrentPlayerTurn()).move();
-            if(validMove(moveChoice)){
-                Player.incrementMoves();
-                updateBoard(moveChoice);
-            }
+        if(playerChoice.toUpperCase().matches("HC")){
+            Player1 = new HumanPlayer();
+            Player2 = new ComputerPlayer();
+            return true;
         }
-    }
-
-    public Boolean validMove(int index){
-        if(labelPosition[index].getText().equals("_")){
+        if(playerChoice.toUpperCase().matches("CC")){
+            Player1 = new ComputerPlayer();
+            Player2 = new ComputerPlayer();
             return true;
         }
         return false;
     }
 
-    public void updateBoard(int index){
+    /**
+     * This is the running method of the game. All base logic of the game is done within this method.
+     */
+    public void startGame(){
 
-            if(Player.getCurrentPlayerTurn() == 0){
-                System.out.print("X " + index + " ");
-                UpdateBoard board = new UpdateBoard(labelPosition,index,"X");
-                board.execute();
+        updateDisplay();
 
-//                labelPosition[index].setText("X");
-                Player.setNextTurn();
+        int player1Move = -1;
+        int player2Move = -1;
+
+        do{
+            do{
+                 player1Move = Player1.move();
+
+            }while(!validateMove(player1Move));
+
+            board[player1Move] = "X";
+            Player.incrementMoves();
+            updateDisplay();
+
+            if(gameInProgress()){
+                do{
+                    player2Move = Player2.move();
+                }while (!validateMove(player2Move));
+                board[player2Move] = "O";
+                Player.incrementMoves();
+                updateDisplay();
             }
-            else if(Player.getCurrentPlayerTurn()  == 1) {
-                System.out.print("O "+ index + " ");
-                UpdateBoard board = new UpdateBoard(labelPosition,index,"O");
-                board.execute();
-//                labelPosition[index].setText("O");
-                Player.setNextTurn();
-        }
+        }while (gameInProgress()); //Check for winner
     }
 
-    private void clearBoard(){
-        Player.resetPlayer();
-        for(int i=0;i<9;i++){
-            labelPosition[i].setText("_");
+
+    /**
+     * Checks to see if the next attempted move is a valid one.
+     * @param move Attempted next move
+     * @return Boolean: If the attempted move is valid
+     */
+    public Boolean validateMove(int move){
+        if(move<0 || move > 8){
+            return false;
         }
+        if(board[move].equals("_")){
+            return true;
+        }
+        return false;
     }
 
-    private  class MouseHandler implements MouseListener {
+    /**
+     * Checks to see if the current game state is a winning game state.
+     * @return Boolean, If the game is in progress or over
+     */
+    public Boolean gameInProgress(){
 
-        @Override
-        public void mouseClicked(MouseEvent e) {
+        if(gameOver == false) {
+            if (!board[0].equals("_") && board[0].equals(board[1]) && board[1].equals(board[2])) {
+                displayWinner(0);
+                gameOver = true;
 
-            for(int i = 0;i<9;i++){
-                if(e.getSource() == panelPosition[i] && Player.getCurrentPlayerTurn() == 0){
-                    labelPosition[i].setText("X");
-                    Player.setNextTurn();
-                }else if(e.getSource() == panelPosition[i] &&  Player.getCurrentPlayerTurn() == 1){
-                    labelPosition[i].setText("O");
-                    Player.setNextTurn();
-                }
+                return false;
+            }
+            if (!board[3].equals("_") && board[3].equals(board[4]) && board[4].equals(board[5])) {
+                displayWinner(3);
+                gameOver = true;
 
+                return false;
+            }
+            if (!board[6].equals("_") && board[6].equals(board[7]) && board[7].equals(board[8])) {
+                displayWinner(6);
+                gameOver = true;
+
+                return false;
+            }
+            if (!board[0].equals("_") && board[0].equals(board[3]) && board[3].equals(board[6])) {
+                displayWinner(0);
+                gameOver = true;
+
+                return false;
+            }
+            if (!board[1].equals("_") && board[1].equals(board[4]) && board[4].equals(board[7])) {
+                displayWinner(1);
+                gameOver = true;
+
+                return false;
+            }
+            if (!board[2].equals("_") && board[2].equals(board[5]) && board[5].equals(board[8])) {
+                displayWinner(2);
+                gameOver = true;
+
+                return false;
+            }
+            if (!board[0].equals("_") && board[0].equals(board[4]) && board[4].equals(board[8])) {
+                displayWinner(0);
+                gameOver = true;
+
+                return false;
+            }
+            if (!board[6].equals("_") && board[6].equals(board[4]) && board[4].equals(board[2])) {
+                displayWinner(6);
+                gameOver = true;
+
+                return false;
             }
 
-        }
+            if (Player.getMoves() == Player.getMAX_MOVES()) {
+                gameOver = true;
 
-        @Override
-        public void mousePressed(MouseEvent e) {
-
+                System.out.println("Cats Game");
+                return false;
+            }
         }
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-    }
-
-    private Boolean winnerNotFound(){
-
-
-        if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(1)) && getLabelText(1).equals(getLabelText(2))){
-            displayWinner(0);
-            return false;
-        }
-        if(!getLabelText(3).equals("_") && getLabelText(3).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(5))){
-            displayWinner(3);
-            return false;
-        }
-        if(!getLabelText(6).equals("_") && getLabelText(6).equals(getLabelText(7)) && getLabelText(7).equals(getLabelText(8))){
-            displayWinner(6);
-            return false;
-        }
-        if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(3)) && getLabelText(3).equals(getLabelText(6))){
-            displayWinner(0);
-            return false;
-        }
-        if(!getLabelText(1).equals("_") && getLabelText(1).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(7))){
-            displayWinner(1);
-            return false;
-        }
-        if(!getLabelText(2).equals("_") && getLabelText(2).equals(getLabelText(5)) && getLabelText(5).equals(getLabelText(8))){
-            displayWinner(2);
-            return false;
-        }
-        if(!getLabelText(0).equals("_") && getLabelText(0).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(8))){
-            displayWinner(0);
-            return false;
-        }
-        if(!getLabelText(6).equals("_") && getLabelText(6).equals(getLabelText(4)) && getLabelText(4).equals(getLabelText(2))){
-            displayWinner(6);
-            return false;
-        }
-        if(Player.getMoves() == MAX_MOVES){
-            winnerLabel.setText("Cats Game");
+        if(gameOver == true){
             return false;
         }
         return true;
+
     }
 
+    /**
+     * Displays which player won to the console.
+     * @param index A position of the current winner's line.
+     */
     private void displayWinner(int index){
-        if(getLabelText(index) == "X"){
-            winnerLabel.setText("Player 1 Won!");
+        if(board[index].equals("X")){
+           System.out.println("Player 1 Won!");
         }
         else{
-            winnerLabel.setText("Player 2 Won!");
+            System.out.println("Player 2 Won!");
         }
     }
 
-    public String getLabelText(int index){
-        return labelPosition[index].getText();
+    /**
+     * Updates the display by printing the current board.
+     */
+    public void updateDisplay(){
+        System.out.println(this.toString());
     }
 
-}
+    /**
+     * Converts the current board to a string.
+     * @return String, the current board as a string.
+     */
+    @Override
+    public String toString() {
+        String outputString = "";
 
+        outputString += board[0] + " " + board[1] + " " + board[2] + "\n";
+        outputString += board[3] + " " + board[4] + " " + board[5] + "\n";
+        outputString += board[6] + " " + board[7] + " " + board[8] + "\n";
+
+        return outputString;
+    }
+}

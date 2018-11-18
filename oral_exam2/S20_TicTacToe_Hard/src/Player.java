@@ -1,51 +1,45 @@
+/**
+ * Player is an abstract class that represents a player playing tic tac toe.
+ */
 public abstract class Player {
 
-    private static int currentPlayerTurn;
-    private static Player[] currentPlayers;
+    public  static int moves;
 
-    private static int moves;
+    public static final int MAX_MOVES = 9;
 
 
     public Player(){
-        currentPlayers = new Player[2];
-        currentPlayerTurn = 0;
-        moves = 0;
+        this.moves = 0;
     }
 
-    public static void resetPlayer(){
-        moves = 0;
-        currentPlayerTurn = 0;
-    }
 
-    public static void setCurrentPlayers(Player player1, Player player2) {
-        currentPlayers[0] = player1;
-        currentPlayers[1] = player2;
-    }
+    /**
+     * Player move position
+     * @return int, move
+     */
+    public abstract int move();
 
-    public static void setNextTurn() {
-        if(currentPlayerTurn == 0){
-            currentPlayerTurn = 1;
-        }
-        else{
-            currentPlayerTurn = 0;
-        }
-    }
 
-    public static int getCurrentPlayerTurn() {
-        return currentPlayerTurn;
-    }
-
-    public static Player getCurrentPlayer(int index) {
-        return currentPlayers[index];
-    }
-
-    public static void incrementMoves() {
-        moves++;
-    }
-
+    /**
+     * Gets how many moves were played
+     * @return int: moves
+     */
     public static int getMoves() {
         return moves;
     }
 
-    public abstract int move();
+    /**
+     * Gets the max number of moves
+     * @return int max number of moves
+     */
+    public static int getMAX_MOVES(){
+        return MAX_MOVES;
+    }
+
+    /**
+     * Increments the moves by one
+     */
+    public static void incrementMoves(){
+        moves++;
+    }
 }
