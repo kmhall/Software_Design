@@ -214,8 +214,4 @@ public class MazeTraversal extends SwingWorker{
         mapDisplay.setText(this.toString());
 
     }
-
-
-
-
 }

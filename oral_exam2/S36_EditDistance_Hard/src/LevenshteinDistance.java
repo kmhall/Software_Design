@@ -21,7 +21,7 @@ public class LevenshteinDistance {
      */
     public static void main(String[] args){
 
-        LevenshteinDistance distance = new LevenshteinDistance("abcdef","azced");
+        LevenshteinDistance distance = new LevenshteinDistance("rat","cats");
         distance.fillMatrix();
         distance.toString();
         distance.backTrack();

@@ -31,6 +31,7 @@ public class MazeTraversalGUI extends JFrame {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+
                         MazeTraversal task =
                                 new MazeTraversal(mapDisplay);
                         task.execute(); // execute the task
