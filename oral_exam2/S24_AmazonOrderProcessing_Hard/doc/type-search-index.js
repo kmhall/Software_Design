@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"AmazonOrder"},{"p":"<Unnamed>","l":"AmazonTest"},{"p":"<Unnamed>","l":"AmazonWebServer"},{"p":"<Unnamed>","l":"BlockingBuffer"},{"p":"<Unnamed>","l":"Buffer"},{"p":"<Unnamed>","l":"DeliveryTruck"},{"p":"<Unnamed>","l":"ShippingCenter"},{"p":"<Unnamed>","l":"ShippingCenterSection"},{"p":"<Unnamed>","l":"ShippingDock"}]

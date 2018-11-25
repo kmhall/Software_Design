@@ -30,8 +30,8 @@ public class ShippingCenterSection implements Runnable {
 
     /**
      * Sends Amazon order to the correct BlockingBuffer synchronously.
-     * @param buffer
-     * @param order
+     * @param buffer Blocking buffer to send
+     * @param order AmazonOrder to send
      */
     public synchronized void sendOrder(BlockingBuffer buffer,AmazonOrder order){
         try

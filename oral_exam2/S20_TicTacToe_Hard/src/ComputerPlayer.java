@@ -2,7 +2,8 @@ import java.util.Random;
 
 /**
  * ComputerPlayer is a class that represents a computer playing tic tac toe.
- * @see Player,Runnable
+ * @see Player
+ * @see Runnable
  */
 public class ComputerPlayer extends Player implements Runnable {
 

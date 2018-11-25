@@ -14,7 +14,7 @@ public class ShippingDock implements Runnable {
      * @param sectionToShippingDock BlockingBuffer from section to the dock
      * @param docktoDeliveryTruck1 BlockingBuffer from dock to truck
      * @param dock1ToDeliveryTruck2 BlockingBuffer from dock to truck
-     * @param dock
+     * @param dock Current dock ID
      */
     public ShippingDock(BlockingBuffer sectionToShippingDock,BlockingBuffer docktoDeliveryTruck1,BlockingBuffer dock1ToDeliveryTruck2,int dock) {
         this.sectionToShippingDock = sectionToShippingDock;
