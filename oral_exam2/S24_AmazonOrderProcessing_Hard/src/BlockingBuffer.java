@@ -14,7 +14,7 @@ public class BlockingBuffer implements Buffer {
      * Constructor for a BlockingBuffer
      */
     public BlockingBuffer() {
-        buffer = new ArrayBlockingQueue<>(1);
+        buffer = new ArrayBlockingQueue<AmazonOrder>(1);
     }
 
     /**

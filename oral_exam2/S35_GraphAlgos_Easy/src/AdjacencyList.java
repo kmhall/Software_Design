@@ -35,7 +35,7 @@ public class AdjacencyList {
      */
     private static List<String> fileToListOfWords(File file){
 
-        List<String> words = new LinkedList<>();
+        List<String> words = new LinkedList<String>();
 
         Scanner inputStream = null;
 
@@ -64,7 +64,7 @@ public class AdjacencyList {
      */
     private static  HashMap<String,List<String>> listOfWordsToHashMap( List<String> words){
 
-        HashMap<String,List<String>> h1 = new HashMap<>();
+        HashMap<String,List<String>> h1 = new HashMap<String, List<String>>();
 
         //Create an iterator for the list of words
         Iterator iter = words.iterator();
@@ -88,7 +88,7 @@ public class AdjacencyList {
      */
     private static List<String> arrayOfEditDistanceOfOne(String currentWord,List<String> words ){
 
-        List<String> oneDistance = new LinkedList<>();
+        List<String> oneDistance = new LinkedList<String>();
 
         for (String word: words) {
             int editDistance = 0;
@@ -122,7 +122,7 @@ public class AdjacencyList {
 
         int noVerticies = 0;
 
-        List<String> wordsWithMostVerticies = new LinkedList<>();
+        List<String> wordsWithMostVerticies = new LinkedList<String>();
         int mostVerticesCount = 0;
         int count = 0;
         float sumVerticies;
@@ -148,7 +148,7 @@ public class AdjacencyList {
             }
 
             if(currentMatch.size() > mostVerticesCount){
-                wordsWithMostVerticies = new LinkedList<>();
+                wordsWithMostVerticies = new LinkedList<String>();
                 wordsWithMostVerticies.add(currentWord);
                 mostVerticesCount = currentMatch.size();
             }
